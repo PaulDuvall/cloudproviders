@@ -1,6 +1,6 @@
 ## Create an S3 Bucket
 
-```aws s3 mb s3://BUCKETNAME``
+```aws s3 mb s3://BUCKETNAME```
 
 1. Choose the *Properties* pane and configure **Static website hosting for the S3 bucket**.
 1. Choose **Use this bucket to host a website**.
