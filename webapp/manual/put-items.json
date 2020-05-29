@@ -1,0 +1,34 @@
+{
+    "CloudProviders": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "CloudProvider": {"S": "AWS"},
+                    "ServiceName": {"S": "CodePipeline"},
+                    "id":{"N":"101"},
+                    "URL": {"S": "https://aws.amazon.com/codepipeline/"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "CloudProvider": {"S": "AWS"},
+                    "ServiceName": {"S": "CodeCommit"},
+                    "id":{"N":"102"},
+                    "URL": {"S": "https://aws.amazon.com/codecommit/"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "CloudProvider": {"S": "AWS"},
+                    "ServiceName": {"S": "CodeBuild"},
+                    "id":{"N":"103"},
+                    "URL": {"S": "https://aws.amazon.com/codebuild/"}
+                }
+            }
+        }
+    ]
+}

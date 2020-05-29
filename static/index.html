@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <title>Paul Duvall | Comparing 3 Major Cloud Providers</title>
+    <meta name="description" content="Comparing 3 Major Cloud Providers"/>
+    <link rel="canonical" href="https://github.com/PaulDuvall/awsazuregcp/"/>
+
+    <meta property="og:title" content="Paul Duvall | Comparing 3 Major Cloud Providers"/>
+    <meta property="og:description" content="Comparing 3 Major Cloud Providers"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://github.com/PaulDuvall/awsazuregcp/"/>
+    <meta property="og:image" content="https://www.awsgeek.com/images/AWS-History.png"/>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://www.awsgeek.com/images/AWS-History.png"/>
+    <meta name="twitter:title" content="Paul Duvall | Comparing 3 Major Cloud Providers"/>
+    <meta name="twitter:description" content="Comparing 3 Major Cloud Providers"/>
+    <meta name="twitter:site" content="paulduvall"/>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <style>
+        .unsortedicon {
+            opacity: 0.2;
+        }
+        #services th { 
+            padding-left: 0; 
+            vertical-align: middle;
+            font-size: medium;
+        }
+        #services td { 
+            padding: 0; 
+            vertical-align: middle;
+            border-bottom: 2px solid #fff;
+            font-size: medium;
+        }
+        .prefix { 
+            text-align: right;
+        }
+        #services a:link {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }                   
+        #services a:visited {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }                   
+        #services a:hover { 
+            color: #eee;
+        }
+        #hiring {
+            border:black solid 1px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Compare 3 Major Cloud Providers</h2>
+        <p>A list of the services provided by the three major cloud providers. The website is initially based on https://github.com/AwsGeek/aws-history. Much will be changed based on this original source.</p>
+
+        <p>This information was obtained from public web pages, mainly <a href="https://aws.amazon.com/new/">What's New with AWS</a>, <a href="https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services">AWS to Azure services comparison</a>, and <a href="https://cloud.google.com/docs/overview/cloud-platform-services">About the GCP services</a>, and <a href="https://caylent.com/aws-google-azure-cloud-comparison"> Cloud Services Comparison: AWS vs. Google vs. Azure</a>, <a href="https://cloud.google.com/docs/compare/aws/">Google Cloud for AWS Professionals</a>, <a href="https://cloud.google.com/docs/compare/azure">Google Cloud for Azure professionals</a>, and <a href="https://cloud.google.com/docs/compare/aws/big-data">Google Cloud for AWS Professionals: Big Data</a>.
+        </p>
+
+        <p>If you have any updates, let me (<a href="https://twitter.com/paulduvall">@paulduvall</a>) know and I'll update, or submit a PR <a href="https://github.com/PaulDuvall/awsazuregcp">here</a> </p>
+
+        <table id="services" class="table table-hover">
+            <thead>
+            <tr>
+                <th id="col-name" colspan=3>AWS&nbsp;<span class="unsortedicon glyphicon glyphicon-sort" ></span></th>
+                <th id="col-category">Category&nbsp;<span class="unsortedicon glyphicon glyphicon-sort"></span></th>
+                <th id="col-announced">Microsoft&nbsp;Azure&nbsp;<span class="unsortedicon glyphicon glyphicon-sort"></span></th>
+                <th id="col-released">Google&nbsp;Cloud&nbsp;Platform&nbsp;<span class="unsortedicon glyphicon glyphicon-sort"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var services = [];
+    var categories = {};
+    $(document).ready(function() {
+        $.get( "services.json", function( data ) {
+            services = data.services;
+            categories = data.categories;
+            services.forEach(function (service) {
+                
+                // Extract the prefix
+                match = service.name.match(/^AWS|^Amazon/)
+                service.prefix = match ? match[0] + "&nbsp;" : "";                
+                // Clean up the name
+                service.name = service.name.replace(/^AWS|^Amazon/, "").trim();
+                // If announced date is empty, copy from released date
+                service.announced = service.announced ? service.announced : service.released;
+                // Use the category icon if necessary
+                service.icon = service.icon ? service.icon : categories[service.category].icon;
+            });
+            $( "#col-released" ).click();
+        }, "json" );
+    });
+    var order = -1;
+    function sortServices(name, func) {
+        $('#services thead th span').addClass("unsortedicon");
+        $(name + ' span').removeClass("unsortedicon");
+        order *= -1; // toggle order, ascending/descending
+        services.sort(func);
+        replaceTable();
+    }
+    $( "#col-name" ).click(function(event) {
+        sortServices("#col-name", function(a, b) {
+            return (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1) * order;
+        });
+    });    
+    $( "#col-category" ).click(function(event) {
+        sortServices("#col-category", function(a, b) {
+            return (a.category.toLowerCase() < b.category.toLowerCase() ? -1 : 1) * order;
+        });
+    });    
+    $( "#col-announced" ).click(function(event) {
+        sortServices("#col-announced", function(a, b) {
+            return (a.announced.date.toLowerCase() < b.announced.date.toLowerCase() ? -1 : 1) * order;
+        });
+    });    
+    $( "#col-released" ).click(function(event) {
+        sortServices("#col-released", function(a, b) {
+             return (a.announced.date.toLowerCase() < b.announced.date.toLowerCase() ? -1 : 1) * order;
+        });
+    });    
+    function formatDate(date) {
+        return moment(new Date(date)).format('DD-MMM-YYYY');
+    }
+    function replaceTable() {
+        $( "#services tbody" ).empty();
+        services.forEach(function (service) {
+                
+            announced = service.announced ? service.announced : service.released;
+            $announced = $('<a>',{
+                target: "_blank",
+                text: announced.date,
+                href: announced.link,
+                onclick: "trackOutboundLink('" + announced.link + "'); return false;"
+            });            
+            released = service.released ? service.released : "";
+            $released = released ? $('<a>',{
+                target: "_blank",
+                text: released.date,
+                href: released.link,
+                onclick: "trackOutboundLink('" + released.link + "'); return false;"
+            }) : "";
+            $productlink = $('<a>',{
+                target: "_blank",
+                text: service.name,
+                href: service.product,
+                onclick: "trackOutboundLink('" + service.product + "'); return false;"
+            });
+            var $tr = $("<tr style='background-color: " + categories[service.category].color + "aa'>").append(
+                $('<td class="icon">').prepend("<img src='" + service.icon + "' width='40' height='40' >"),
+                $('<td class="prefix">').html(service.prefix),
+                $('<td class="service">').html($productlink), 
+                $('<td class="category">').text(service.category), 
+                $('<td class="announced">').append($announced), 
+                $('<td class="released">').append($released), 
+                );
+            $( "#services tbody" ).append($tr);
+        });
+    }
+</script>
+</html>

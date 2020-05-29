@@ -1,0 +1,2356 @@
+{
+   "categories": {     
+         "Analytics":  { 
+            "color":"#A166FF", 
+            "icon":"icons/Analytics.svg"
+         },
+         "Application Integration":  {
+            "color":"#FF4F8B", 
+            "icon":"icons/Application-Integration.svg"
+         },
+         "AR & VR":  {
+            "color":"#FF4F8B", 
+            "icon":"icons/AR-VR.svg"
+         },
+         "Cost Management":  {
+            "color":"#6CAE3E", 
+            "icon":"icons/AWS-Cost-Management.svg"
+         },
+         "Blockchain":  {
+            "color":"#FF9900", 
+            "icon":"icons/Blockchain.svg"
+         },
+         "Business Applications":  {
+            "color":"#FF5252", 
+            "icon":"icons/Business-Applications.svg"
+         },
+         "Compute":  {
+            "color":"#FF9900",
+            "icon":"icons/Compute.svg"
+         },
+         "Customer Engagement":  {
+            "color":"#527FFF", 
+            "icon":"icons/Customer-Engagement.svg"
+         },
+         "Database":  {
+            "color":"#527FFF", 
+            "icon":"icons/Database.svg"
+         },
+         "Developer Tools":  {
+            "color":"#527FFF", 
+            "icon":"icons/Developer-Tools.svg"
+         },
+         "End User Computing":  {
+            "color":"#56C0A7", 
+            "icon":"icons/End-User-Computing.svg"
+         },
+         "Game Tech":  {
+            "color":"#A166FF", 
+            "icon":"icons/Game-Tech.svg"
+         },
+         "Internet of Things":  {
+            "color":"#6CAE3E", 
+            "icon":"icons/Internet-of-Things.svg"
+         },
+         "Machine Learning":  {
+            "color":"#56C0A7", 
+            "icon":"icons/Machine-Learning.svg"
+         },
+         "Management & Governance":  {
+            "color":"#FF4F8B", 
+            "icon":"icons/Management-and-Governance.svg"
+         },
+         "Media Services":  {
+            "color":"#FF9900", 
+            "icon":"icons/Media-Services.svg"
+         },
+         "Migration & Transfer":  {
+            "color":"#56C0A7", 
+            "icon":"icons/Migration-and-Transfer.svg"
+         },
+         "Mobile":  {
+            "color":"#FF5252", 
+            "icon":"icons/Mobile.svg"
+         },
+         "Networking & Content Delivery":  {
+            "color":"#A166FF", 
+            "icon":"icons/Networking-and-Content-Delivery.svg"
+         },
+         "Robotics":  {
+            "color":"#FF5252", 
+            "icon":"icons/Robotics.svg"
+         },
+         "Satellite":  {
+            "color":"#527FFF", 
+            "icon":"icons/Satellite.svg"
+         },
+         "Security, Identity & Compliance":  {
+            "color":"#FF5252", 
+            "icon":"icons/Security-Identity-and-Compliance.svg"
+         },
+         "Storage":  {
+            "color":"#6CAE3E", 
+            "icon":"icons/Storage.svg"
+         }
+   },
+   "services":[
+       {
+         "name":"Data Exchange",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/data-exchange/",
+         "announced":{
+            "date":"Data Share",
+            "link":"https://azure.microsoft.com/en-us/services/data-share/"
+         },
+         "released":{
+            "date":"Cloud Data Transfer",
+            "link":"https://cloud.google.com/products/data-transfer"
+         }
+       },
+       {
+         "name":"Elastic Block Store (EBS)",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/ebs/",
+         "announced":{
+            "date":"Managed Disks",
+            "link":"https://azure.microsoft.com/en-us/services/storage/disks/"
+         },
+         "released":{
+            "date":"Compute Engine Persistent Disks",
+            "link":"Google Compute Engine Persistent Disks"
+         },
+         "icon":"icons/Amazon-Elastic-Block-Store-EBS.svg"
+      },
+      {
+         "name":"EMR",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/elasticmapreduce/",
+         "announced":{
+            "date":"Databricks",
+            "link":"https://azure.microsoft.com/en-us/services/databricks/"
+         },
+         "released":{
+            "date":"Dataproc",
+            "link":"https://cloud.google.com/dataproc"
+         },
+         "icon":"icons/Amazon-EMR.svg"
+      },
+      {
+         "name":"CloudSearch",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/cloudsearch/",
+         "announced":{
+            "date":"Cognitive Search",
+            "link":"https://azure.microsoft.com/en-us/services/search/"
+         },
+         "released":{
+            "date":"Cloud Search",
+            "link":"https://cloud.google.com/products/search"
+         },
+         "icon":"icons/Amazon-CloudSearch.svg"
+      },
+      {
+         "name":"Data Pipeline",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/datapipeline/",
+         "announced":{
+            "date":"Data Factory",
+            "link":"https://azure.microsoft.com/en-us/services/data-factory/"
+         },
+         "released":{
+            "date":"Cloud Composer",
+            "link":"https://cloud.google.com/composer"
+         },
+         "icon":"icons/AWS-Data-Pipeline.svg"
+      },
+      {
+         "name":"Kinesis",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/kinesis/",
+         "announced":{
+            "date":"Stream Analytics",
+            "link":"https://azure.microsoft.com/en-us/services/stream-analytics/"
+         },
+         "released":{
+            "date":"Dataflow",
+            "link":"https://cloud.google.com/dataflow"
+         },
+         "icon":"icons/Amazon-Kinesis.svg"
+      },
+      {
+         "name":"Elasticsearch Service",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/elasticsearch-service/",
+         "announced":{
+            "date":"Elastic on Azure",
+            "link":"https://azure.microsoft.com/en-us/overview/linux-on-azure/elastic/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Elasticsearch-Service.svg"
+      },
+      {
+         "name":"Quicksight",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/quicksight/",
+         "announced":{
+            "date":"Power BI",
+            "link":"https://powerbi.microsoft.com/en-us/"
+         },
+         "released":{
+            "date":"Datalab",
+            "link":"https://cloud.google.com/datalab"
+         },
+         "icon":"icons/Amazon-Quicksight.svg"
+      },
+      {
+         "name":"Athena",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/athena/",
+         "announced":{
+            "date":"Data Lake Analytics",
+            "link":"https://azure.microsoft.com/en-us/services/data-lake-analytics/"
+         },
+         "released":{
+            "date":"BigQuery",
+            "link":"https://cloud.google.com/bigquery"
+         },
+         "icon":"icons/Amazon-Athena.svg"
+      },
+      {
+         "name":"Glue",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/glue/",
+         "announced":{
+            "date":"Data Factory",
+            "link":"https://azure.microsoft.com/en-us/services/data-factory/"
+         },
+         "released":{
+            "date":"Cloud Dataprep by Trifacta",
+            "link":"https://cloud.google.com/dataprep"
+         },
+         "icon":"icons/AWS-Glue.svg"
+      },
+      {
+         "name":"Lake Formation",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/lake-formation/",
+         "announced":{
+            "date":"Data Share",
+            "link":"https://azure.microsoft.com/en-us/services/data-share/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Lake-Formation.svg"
+      },
+      {
+         "name":"Managed Streaming for Kafka",
+         "category":"Analytics",
+         "product":"https://aws.amazon.com/msk/",
+         "announced":{
+            "date":"Event Hubs",
+            "link":"https://azure.microsoft.com/en-us/services/event-hubs/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Managed-Streaming-for-Kafka.svg"
+      },
+      {
+         "name":"Simple Queue Service (SQS)",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/sqs/",
+         "announced":{
+            "date":"Service Bus",
+            "link":"https://azure.microsoft.com/en-us/services/service-bus/"
+         },
+         "released":{
+            "date":"Cloud Pub/Sub",
+            "link":"https://cloud.google.com/pubsub"
+         },
+         "icon":"icons/Amazon-Simple-Queue-Service-SQS.svg"
+      },
+      {
+         "name":"Simple Notification Service (SNS)",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/sns/",
+         "announced":{
+            "date":"Event Grid",
+            "link":"https://azure.microsoft.com/en-us/services/event-grid/"
+         },
+         "released":{
+            "date":"Cloud Pub/Sub",
+            "link":"https://cloud.google.com/pubsub"
+         },
+         "icon":"icons/Amazon-Simple-Notification-Service-SNS.svg"
+      },
+      {
+         "name":"Simple Workflow",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/swf/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Simple-Workflow.svg"
+      },      
+      {
+         "name":"Step Functions",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/step-functions/",
+         "announced":{
+            "date":"Logic Apps",
+            "link":"https://azure.microsoft.com/en-us/services/logic-apps/"
+         },
+         "released":{
+            "date":"Dataflow",
+            "link":"https://cloud.google.com/dataflow/"
+         },
+         "icon":"icons/AWS-Step-Functions.svg"
+      },
+      {
+         "name":"MQ",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/amazon-mq/",
+         "announced":{
+            "date":"Service Bus",
+            "link":"https://azure.microsoft.com/en-us/services/service-bus/"
+         },
+         "released":{
+            "date":"Cloud Pub/Sub",
+            "link":"https://cloud.google.com/pubsub"
+         },
+         "icon":"icons/Amazon-MQ.svg"
+      },
+      {
+         "name":"Sumerian",
+         "category":"AR & VR",
+         "product":"https://aws.amazon.com/sumerian/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Sumerian.svg"
+      },
+      {
+         "name":"Cost Explorer",
+         "category":"Cost Management",
+         "product":"https://aws.amazon.com/aws-cost-management/aws-cost-explorer/",
+         "announced":{
+            "date":"Cost Management",
+            "link":"https://azure.microsoft.com/en-us/services/cost-management/"
+         },
+         "released":{
+            "date":"Cost Management",
+            "link":"https://cloud.google.com/cost-management"
+         },
+         "icon":"icons/AWS-Cost-Explorer.svg"
+      },
+      {
+         "name":"Budgets",
+         "category":"Cost Management",
+         "product":"https://aws.amazon.com/aws-cost-management/aws-budgets/",
+         "announced":{
+            "date":"Cost Management + Billing",
+            "link":"https://azure.microsoft.com/en-us/services/cost-management/"
+         },
+         "released":{
+            "date":"Cost Management",
+            "link":"https://cloud.google.com/cost-management"
+         },
+         "icon":"icons/AWS-Budgets.svg"
+      },
+      {
+         "name":"Managed Blockchain",
+         "category":"Blockchain",
+         "product":"https://aws.amazon.com/blockchain/",
+         "announced":{
+            "date":"Blockchain Service",
+            "link":"https://azure.microsoft.com/en-us/services/blockchain-service/"
+         },
+         "released":{
+            "date":"Cloud Blockchain",
+            "link":"https://cloud.google.com/customers/blockchain/"
+         },
+         "icon":"icons/Amazon-Managed-Blockchain.svg"
+      },
+      {
+         "name":"WorkMail",
+         "category":"Business Applications",
+         "product":"https://aws.amazon.com/workmail/",
+         "announced":{
+            "date":"Microsoft 365",
+            "link":"https://www.microsoft.com/en-us/microsoft-365"
+         },
+         "released":{
+            "date":"G Suite",
+            "link":"https://gsuite.google.com/"
+         },
+         "icon":"icons/Amazon-WorkMail.svg"
+      },
+      {
+         "name":"Chime",
+         "category":"Business Applications",
+         "product":"https://aws.amazon.com/chime/",
+         "announced":{
+            "date":"Microsoft Teams",
+            "link":"https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/"
+         },
+         "released":{
+            "date":"Google Meet",
+            "link":"https://meet.google.com/"
+         },
+         "icon":"icons/Amazon-Chime.svg"
+      },
+      {
+         "name":"Alexa for Business",
+         "category":"Business Applications",
+         "product":"https://aws.amazon.com/alexaforbusiness/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Alexa-for-Business.svg"
+      },
+      {
+         "name":"EC2",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/ec2/",
+         "announced":{
+            "date":"Virtual Machines (VMs)",
+            "link":"https://azure.microsoft.com/en-us/services/virtual-machines/"
+         },
+         "released":{
+            "date":"Compute Engine",
+            "link":"https://cloud.google.com/compute"
+         },
+         "icon":"icons/Amazon-EC2.svg"
+      },
+      {
+         "name":"Fargate",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/fargate/",
+         "announced":{
+            "date":"Container Instances",
+            "link":"https://azure.microsoft.com/en-us/services/container-instances/"
+         },
+         "released":{
+            "date":"Cloud Run",
+            "link":"https://cloud.google.com/run"
+         },
+         "icon":"icons/AWS-Fargate.svg"
+      },
+      {
+         "name":"Braket",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/braket/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"Wavelength",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/wavelength/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"Elastic Beanstalk",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/elasticbeanstalk/",
+         "announced":{
+            "date":"App Service",
+            "link":"https://azure.microsoft.com/en-us/services/app-service/"
+         },
+         "released":{
+            "date":"App Engine",
+            "link":"https://cloud.google.com/appengine"
+         },
+         "icon":"icons/AWS-Elastic-Beanstalk.svg"
+      },
+      {
+         "name":"Elastic Container Service",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/ecs/",
+         "announced":{
+            "date":"Container Instances",
+            "link":"https://azure.microsoft.com/en-us/services/container-instances/"
+         },
+         "released":{
+            "date":"Google Kubernetes Engine",
+            "link":"https://cloud.google.com/kubernetes-engine/"
+         },
+         "icon":"icons/Amazon-Elastic-Container-Service.svg"
+      },
+      {
+         "name":"Lambda",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/lambda/",
+         "announced":{
+            "date":"Functions",
+            "link":"https://azure.microsoft.com/en-us/services/functions/"
+         },
+         "released":{
+            "date":"Cloud Functions",
+            "link":"https://cloud.google.com/functions"
+         },
+         "icon":"icons/AWS-Lambda.svg"
+      },
+      {
+         "name":"Elastic Container Registry",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/ecr/",
+         "announced":{
+            "date":"Container Registry",
+            "link":"https://azure.microsoft.com/en-us/services/container-registry/"
+         },
+         "released":{
+            "date":"Container Registry",
+            "link":"https://cloud.google.com/container-registry"
+         },
+         "icon":"icons/Amazon-Elastic-Container-Registry.svg"
+      },
+      {
+         "name":"Lightsail",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/lightsail/",
+         "announced":{
+            "date":"Virtual Machines",
+            "link":"https://azure.microsoft.com/en-us/services/virtual-machines/"
+         },
+         "released":{
+            "date":"Google Compute Engine",
+            "link":"https://cloud.google.com/compute"
+         },
+         "icon":"icons/Amazon-Lightsail.svg"
+      },
+      {
+         "name":"Batch",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/batch/",
+         "announced":{
+            "date":"Batch",
+            "link":"https://azure.microsoft.com/en-us/services/batch/"
+         },
+         "released":{
+            "date":"Dataproc",
+            "link":"https://cloud.google.com/dataproc"
+         },
+         "icon":"icons/AWS-Batch.svg"
+      },
+      {
+         "name":"Serverless Application Repository",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/serverlessrepo/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Serverless-Application-Repository.svg"
+      },
+      {
+         "name":"Elastic Kubernetes Service (EKS)",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/eks/",
+         "announced":{
+            "date":"Azure Kubernetes Service (AKS)",
+            "link":"https://azure.microsoft.com/en-us/services/kubernetes-service/"
+         },
+         "released":{
+            "date":"Google Kubernetes Engine (GKE)",
+            "link":"https://cloud.google.com/kubernetes-engine"
+         },
+         "icon":"icons/Amazon-Elastic-Container-Service-for-Kubernetes.svg"
+      },
+      {
+         "name":"Outposts",
+         "category":"Compute",
+         "product":"https://aws.amazon.com/outposts/",
+         "announced":{
+            "date":"Azure Arc",
+            "link":"https://azure.microsoft.com/en-us/services/azure-arc/"
+         },
+         "released":{
+            "date":"Anthos",
+            "link":"https://cloud.google.com/anthos"
+         },
+         "icon":"icons/AWS-Outposts.svg"
+      },
+      {
+         "name":"Simple Email Service (SES)",
+         "category":"Customer Engagement",
+         "product":"https://aws.amazon.com/ses/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Simple-Email-Service-SES.svg"
+      },
+      {
+         "name":"Mobile Analytics",
+         "category":"Mobile",
+         "product":"https://aws.amazon.com/mobileanalytics/",
+         "announced":{
+            "date":"Azure Mobile",
+            "link":"https://azure.microsoft.com/en-us/solutions/mobile/"
+         },
+         "released":{
+            "date":"Firebase",
+            "link":"https://firebase.google.com/"
+         },
+         "icon":"icons/Amazon-Mobile-Analytics.svg"
+      },
+      {
+         "name":"Connect",
+         "category":"Customer Engagement",
+         "product":"https://aws.amazon.com/connect/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"Contact Center AI",
+            "link":"https://cloud.google.com/solutions/contact-center"
+         },
+         "icon":"icons/Amazon-Connect.svg"
+      },
+      {
+         "name":"SimpleDB",
+         "category":"Database",
+         "product":"https://aws.amazon.com/simpledb/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"ElastiCache",
+         "category":"Database",
+         "product":"https://aws.amazon.com/elasticache/",
+         "announced":{
+            "date":"Azure Cache for Redis",
+            "link":"https://azure.microsoft.com/en-us/services/cache/"
+         },
+         "released":{
+            "date":"Memorystore",
+            "link":"https://cloud.google.com/memorystore"
+         },
+         "icon":"icons/Amazon-ElastiCache.svg"
+      },
+      {
+         "name":"DynamoDB",
+         "category":"Database",
+         "product":"https://aws.amazon.com/dynamodb/",
+         "announced":{
+            "date":"Table Storage",
+            "link":"https://azure.microsoft.com/en-us/services/storage/tables/"
+         },
+         "released":{
+            "date":"Cloud Datastore",
+            "link":"https://cloud.google.com/datastore"
+         },
+         "icon":"icons/Amazon-DynamoDB.svg"
+      },
+      {
+         "name":"Redshift",
+         "category":"Database",
+         "product":"https://aws.amazon.com/redshift/",
+         "announced":{
+            "date":"Synapse Analytics",
+            "link":"https://azure.microsoft.com/en-us/services/synapse-analytics/"
+         },
+         "released":{
+            "date":"Big Query",
+            "link":"https://cloud.google.com/bigquery/"
+         },
+         "icon":"icons/Amazon-Redshift.svg"
+      },
+      {
+         "name":"RDS",
+         "category":"Database",
+         "product":"https://aws.amazon.com/rds/",
+         "announced":{
+            "date":"Azure SQL Database",
+            "link":"https://azure.microsoft.com/en-us/services/sql-database/"
+         },
+         "released":{
+            "date":"Cloud SQL",
+            "link":"https://cloud.google.com/sql/"
+         },
+         "icon":"icons/Amazon-RDS.svg"
+      },
+      {
+         "name":"Neptune",
+         "category":"Database",
+         "product":"https://aws.amazon.com/neptune/",
+         "announced":{
+            "date":"Cosmos DB",
+            "link":"https://azure.microsoft.com/en-us/services/cosmos-db/"
+         },
+         "released":{
+            "date":"Cloud Datastore",
+            "link":"https://cloud.google.com/datastore"
+         },
+         "icon":"icons/Amazon-Neptune.svg"
+      },
+      {
+         "name":"Quantum Ledger Database (QLDB)",
+         "category":"Database",
+         "product":"https://aws.amazon.com/qldb/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Quantum-Ledger-Database-QLDB.svg"
+      },
+      {
+         "name":"Keyspaces",
+         "category":"Database",
+         "product":"http://aws.amazon.com/mcs/",
+         "announced":{
+            "date":"Cosmos DB",
+            "link":"https://azure.microsoft.com/en-us/services/cosmos-db/"
+         },
+         "released":{
+            "date":"Cloud Datastore",
+            "link":"https://cloud.google.com/datastore"
+         }
+      },
+      {
+         "name":"Timestream",
+         "category":"Database",
+         "product":"https://aws.amazon.com/timestream/",
+         "announced":{
+            "date":"Cosmos DB",
+            "link":"https://azure.microsoft.com/en-us/services/cosmos-db/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Timestream.svg"
+      },
+      {
+         "name":"DocumentDB (with MongoDB compatibility)",
+         "category":"Database",
+         "product":"https://aws.amazon.com/documentdb/",
+         "announced":{
+            "date":"Cosmos DB",
+            "link":"https://azure.microsoft.com/en-us/services/cosmos-db/"
+         },
+         "released":{
+            "date":"Firestore",
+            "link":"https://cloud.google.com/firestore/"
+         },
+         "icon":"icons/Amazon-DocumentDB-with-MongoDB-compatibility.svg"
+      },
+      {
+         "name":"CodeDeploy",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/codedeploy/",
+         "announced":{
+            "date":"DevOps",
+            "link":"https://azure.microsoft.com/en-us/services/devops/"
+         },
+         "released":{
+            "date":"Cloud Build",
+            "link":"https://cloud.google.com/cloud-build"
+         },
+         "icon":"icons/AWS-CodeDeploy.svg"
+      },
+      {
+         "name":"CodePipeline",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/codepipeline/",
+         "announced":{
+            "date":"DevOps",
+            "link":"https://azure.microsoft.com/en-us/services/devops/"
+         },
+         "released":{
+            "date":"Cloud Build",
+            "link":"https://cloud.google.com/cloud-build"
+         },
+         "icon":"icons/AWS-CodePipeline.svg"
+      },
+      {
+         "name":"CodeCommit",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/codecommit/",
+         "announced":{
+            "date":"DevOps",
+            "link":"https://azure.microsoft.com/en-us/services/devops/"
+         },
+         "released":{
+            "date":"Cloud Source Repositories",
+            "link":"https://cloud.google.com/source-repositories"
+         },
+         "icon":"icons/AWS-CodeCommit.svg"
+      },
+      {
+         "name":"CodeBuild",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/codebuild/",
+         "announced":{
+            "date":"DevOps",
+            "link":"https://azure.microsoft.com/en-us/services/devops/"
+         },
+         "released":{
+            "date":"Cloud Build",
+            "link":"https://cloud.google.com/cloud-build"
+         },
+         "icon":"icons/AWS-CodeBuild.svg"
+      },
+      {
+         "name":"CodeStar",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/codestar/",
+         "announced":{
+            "date":"DevOps",
+            "link":"https://azure.microsoft.com/en-us/services/devops/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-CodeStar.svg"
+      },
+      {
+         "name":"X-Ray",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/xray/",
+         "announced":{
+            "date":"Azure Application Insights",
+            "link":"https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview/"
+         },
+         "released":{
+            "date":"Cloud Debugger",
+            "link":"https://cloud.google.com/debugger"
+         },
+         "icon":"icons/AWS-X-Ray.svg"
+      },
+      {
+         "name":"Cloud9",
+         "category":"Developer Tools",
+         "product":"https://aws.amazon.com/cloud9/",
+         "announced":{
+            "date":"Visual Studio",
+            "link":"https://azure.microsoft.com/en-us/products/visual-studio/"
+         },
+         "released":{
+            "date":"Cloud Code",
+            "link":"https://cloud.google.com/code"
+         },
+         "icon":"icons/AWS-Cloud9.svg"
+      },
+      {
+         "name":"Appstream",
+         "category":"End User Computing",
+         "product":"https://aws.amazon.com/appstream",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"WorkSpaces",
+         "category":"End User Computing",
+         "product":"https://aws.amazon.com/workspaces/",
+         "announced":{
+            "date":"Windows Virtual Desktop",
+            "link":"https://azure.microsoft.com/en-us/services/virtual-desktop/"
+         },
+         "released":{
+            "date":"Chrome Remote Desktop",
+            "link":"https://remotedesktop.google.com/"
+         },
+         "icon":"icons/Amazon-WorkSpaces.svg"
+      },
+      {
+         "name":"WorkDocs",
+         "category":"End User Computing",
+         "product":"https://aws.amazon.com/workdocs/",
+         "announced":{
+            "date":"Microsoft 365",
+            "link":"https://www.microsoft.com/en-us/microsoft-365"
+         },
+         "released":{
+            "date":"G Suite",
+            "link":"https://gsuite.google.com/"
+         },
+         "icon":"icons/Amazon-WorkDocs.svg"
+      },
+      {
+         "name":"AppStream 2.0",
+         "category":"End User Computing",
+         "product":"https://aws.amazon.com/appstream2/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-AppStream-20.svg"
+      },
+      {
+         "name":"WorkLink",
+         "category":"End User Computing",
+         "product":"https://aws.amazon.com/worklink/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-WorkLink.svg"
+      },
+      {
+         "name":"GameLift",
+         "category":"Game Tech",
+         "product":"https://aws.amazon.com/gamelift/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-GameLift.svg"
+      },
+      {
+         "name":"IoT Core",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-core/",
+         "announced":{
+            "date":"Azure IoT Hub",
+            "link":"https://azure.microsoft.com/en-us/services/iot-hub/"
+         },
+         "released":{
+            "date":"Cloud IoT Core",
+            "link":"https://cloud.google.com/iot-core"
+         },
+         "icon":"icons/AWS-IoT-Core.svg"
+      },
+      {
+         "name":"Greengrass",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/greengrass/",
+         "announced":{
+            "date":"IoT Edge",
+            "link":"https://azure.microsoft.com/en-us/services/iot-edge/"
+         },
+         "released":{
+            "date":"IoT Edge TPU",
+            "link":"https://cloud.google.com/edge-tpu"
+         },
+         "icon":"icons/AWS-Greengrass.svg"
+      },
+      {
+         "name":"IoT Device Management",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-device-management/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-Device-Management.svg"
+      },
+      {
+         "name":"FreeRTOS",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/freertos/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-FreeRTOS.svg"
+      },
+      {
+         "name":"IoT Analytics",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-analytics/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-Analytics.svg"
+      },
+      {
+         "name":"IoT 1-Click",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-1-click/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-1-Click.svg"
+      },
+      {
+         "name":"IoT Device Defender",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-device-defender/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-Device-Defender.svg"
+      },
+      {
+         "name":"IoT SiteWise",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-sitewise/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-SiteWise.svg"
+      },
+      {
+         "name":"IoT Events",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-events/",
+         "announced":{
+            "date":"Azure IoT",
+            "link":"https://azure.microsoft.com/en-us/overview/iot/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-Events.svg"
+      },
+      {
+         "name":"IoT Things Graph",
+         "category":"Internet of Things",
+         "product":"https://aws.amazon.com/iot-things-graph/",
+         "announced":{
+            "date":"Digital Twins",
+            "link":"https://azure.microsoft.com/en-us/services/digital-twins/"
+         },
+         "released":{
+            "date":"Cloud IoT",
+            "link":"https://cloud.google.com/solutions/iot/"
+         },
+         "icon":"icons/AWS-IoT-Things-Graph.svg"
+      },
+      {
+         "name":"Polly",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/polly/",
+         "announced":{
+            "date":"Text to Speech",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/"
+         },
+         "released":{
+            "date":"Cloud Text-to-Speech",
+            "link":"https://cloud.google.com/text-to-speech"
+         },
+         "icon":"icons/Amazon-Polly.svg"
+      },
+      {
+         "name":"Rekognition",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/rekognition/",
+         "announced":{
+            "date":"Video Indexer",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/video-indexer/"
+         },
+         "released":{
+            "date":"Video AI",
+            "link":"https://cloud.google.com/video-intelligence/"
+         },
+         "icon":"icons/Amazon-Rekognition.svg"
+      },
+      {
+         "name":"Lex",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/lex/",
+         "announced":{
+            "date":"Speech Services",
+            "link":"https://azure.microsoft.com/services/cognitive-services/speech/"
+         },
+         "released":{
+            "date":"Dialogflow",
+            "link":"https://cloud.google.com/dialogflow/"
+         },
+         "icon":"icons/Amazon-Lex.svg"
+      },
+      {
+         "name":"Chatbot",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/chatbot/",
+         "announced":{
+            "date":"Bot Service",
+            "link":"https://azure.microsoft.com/en-us/services/bot-service/"
+         },
+         "released":{
+            "date":"Dialogflow",
+            "link":"https://cloud.google.com/dialogflow"
+         },
+         "icon":"icons/Amazon-Lex.svg"
+      },
+      {
+         "name":"CodeGuru",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/codeguru/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-CodeGuru.svg"
+      },
+      {
+         "name":"Comprehend",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/comprehend/",
+         "announced":{
+            "date":"Text Analytics",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/"
+         },
+         "released":{
+            "date":"Natural Language",
+            "link":"https://cloud.google.com/natural-language/"
+         },
+         "icon":"icons/Amazon-Comprehend.svg"
+      },
+      {
+         "name":"SageMaker",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/sagemaker/",
+         "announced":{
+            "date":"Azure Machine Learning",
+            "link":"https://azure.microsoft.com/en-us/services/machine-learning/"
+         },
+         "released":{
+            "date":"AI Platform",
+            "link":"https://cloud.google.com/ai-platform"
+         },
+         "icon":"icons/Amazon-SageMaker.svg"
+      },
+      {
+         "name":"Fraud Detector",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/fraud-detector/",
+         "announced":{
+            "date":"Anomaly Detector",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai"
+         }
+      },
+      {
+         "name":"Kendra",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/kendra/",
+         "announced":{
+            "date":"Cognitive Search",
+            "link":"https://azure.microsoft.com/en-us/services/search/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"Transcribe",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/transcribe/",
+         "announced":{
+            "date":"Speech to Text",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/"
+         },
+         "released":{
+            "date":"Speech-to-Text",
+            "link":"https://cloud.google.com/speech-to-text/"
+         },
+         "icon":"icons/Amazon-Transcribe.svg"
+      },
+      {
+         "name":"Translate",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/translate/",
+         "announced":{
+            "date":"Speech Translation",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/"
+         },
+         "released":{
+            "date":"Cloud Translation",
+            "link":"https://cloud.google.com/translate/"
+         },
+         "icon":"icons/Amazon-Translate.svg"
+      },
+      {
+         "name":"DeepLens",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/deeplens/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-DeepLens.svg"
+      },
+      {
+         "name":"DeepComposer",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/deepcomposer/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },
+      {
+         "name":"Elastic Inference",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/elastic-inference/",
+         "announced":{
+            "date":"Machine Learning",
+            "link":"https://azure.microsoft.com/en-us/services/machine-learning/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai"
+         },
+         "icon":"icons/Amazon-Elastic-Inference.svg"
+      },
+      {
+         "name":"Forecast",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/forecast/",
+         "announced":{
+            "date":"Machine Learning",
+            "link":"https://azure.microsoft.com/en-us/services/machine-learning/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai"
+         },
+         "icon":"icons/Amazon-Forecast.svg"
+      },
+      {
+         "name":"Inferentia",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/inferentia/",
+         "announced":{
+            "date":"Machine Learning",
+            "link":"https://azure.microsoft.com/en-us/services/machine-learning/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai/"
+         },
+         "icon":"icons/Amazon-Inferentia.svg"
+      },
+      {
+         "name":"DeepRacer",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/deepracer/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-DeepRacer.svg"
+      },
+      {
+         "name":"Textract",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/textract/",
+         "announced":{
+            "date":"Machine Learning",
+            "link":"https://azure.microsoft.com/en-us/services/machine-learning/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai"
+         },
+         "icon":"icons/Amazon-Textract.svg"
+      },
+      {
+         "name":"Personalize",
+         "category":"Machine Learning",
+         "product":"https://aws.amazon.com/personalize/",
+         "announced":{
+            "date":"Personalizer",
+            "link":"https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/"
+         },
+         "released":{
+            "date":"Cloud AI",
+            "link":"https://cloud.google.com/products/ai"
+         },
+         "icon":"icons/Amazon-Personalize.svg"
+      },
+      {
+         "name":"CloudFormation",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/cloudformation/",
+         "announced":{
+            "date":"Azure Resource Manager",
+            "link":"https://azure.microsoft.com/en-us/features/resource-manager/"
+         },
+         "released":{
+            "date":"Cloud Deployment Manager",
+            "link":"https://cloud.google.com/deployment-manager"
+         },
+         "icon":"icons/AWS-CloudFormation.svg"
+      },
+      {
+         "name":"Trusted Advisor",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/trustedadvisor/",
+         "announced":{
+            "date":"Azure Advisor",
+            "link":"https://azure.microsoft.com/en-us/services/advisor/"
+         },
+         "released":{
+            "date":"Cloud Platform Security",
+            "link":"https://cloud.google.com/security/"
+         },
+         "icon":"icons/AWS-Trusted-Advisor.svg"
+      },
+      {
+         "name":"OpsWorks",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/opsworks/",
+         "announced":{
+            "date":"Automation",
+            "link":"https://azure.microsoft.com/en-us/services/automation/"
+         },
+         "released":{
+            "date":"Cloud Deployment Manager",
+            "link":"https://cloud.google.com/deployment-manager/"
+         },
+         "icon":"icons/AWS-OpsWorks.svg"
+      },
+      {
+         "name":"CloudTrail",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/cloudtrail/",
+         "announced":{
+            "date":"Monitor",
+            "link":"https://azure.microsoft.com/en-us/services/monitor/"
+         },
+         "released":{
+            "date":"Cloud Audit Logs",
+            "link":"https://cloud.google.com/audit-logs"
+         },
+         "icon":"icons/AWS-CloudTrail.svg"
+      },
+      {
+         "name":"Config",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/config/",
+         "announced":{
+            "date":"Monitor",
+            "link":"https://azure.microsoft.com/en-us/services/monitor/"
+         },
+         "released":{
+            "date":"Cloud Asset Inventory",
+            "link":"https://cloud.google.com/asset-inventory/"
+         },
+         "icon":"icons/AWS-Config.svg"
+      },
+      {
+         "name":"Service Catalog",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/servicecatalog/",
+         "announced":{
+            "date":"Azure Managed Applications",
+            "link":"https://azure.microsoft.com/en-us/services/managed-applications/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Service-Catalog.svg"
+      },
+      {
+         "name":"Personal Health Dashboard",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/premiumsupport/phd/",
+         "announced":{
+            "date":"Resource Health",
+            "link":"https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Personal-Health-Dashboard.svg"
+      },
+      {
+         "name":"Systems Manager",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/systems-manager/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Systems-Manager.svg"
+      },
+      {
+         "name":"Managed Services",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/managed-services/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Managed-Services.svg"
+      },
+      {
+         "name":"Organizations",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/organizations/",
+         "announced":{
+            "date":"Management Groups",
+            "link":"https://docs.microsoft.com/en-us/azure/governance/management-groups/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Organizations.svg"
+      },
+      {
+         "name":"Auto Scaling",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/autoscaling/",
+         "announced":{
+            "date":"Virtual Machine Scale Sets",
+            "link":"https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
+         },
+         "released":{
+            "date":"Instance Groups",
+            "link":"https://cloud.google.com/compute/docs/instance-groups/"
+         },
+         "icon":"icons/AWS-Auto-Scaling.svg"
+      },
+      {
+         "name":"License Manager",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/license-manager/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-License-Manager.svg"
+      },
+      {
+         "name":"Well-Architected Tool",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/well-architected-tool/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Well-Architected-Tool.svg"
+      },
+      {
+         "name":"CloudWatch",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/cloudwatch/",
+         "announced":{
+            "date":"Monitor",
+            "link":"https://azure.microsoft.com/en-us/services/monitor/"
+         },
+         "released":{
+            "date":"Cloud Monitoring",
+            "link":"https://cloud.google.com/monitoring"
+         },
+         "icon":"icons/Amazon-CloudWatch.svg"
+      },
+      {
+         "name":"Control Tower",
+         "category":"Management & Governance",
+         "product":"https://aws.amazon.com/controltower/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Control-Tower.svg"
+      },
+      {
+         "name":"Elastic Transcoder",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/elastictranscoder/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Elastic-Transcoder.svg"
+      },
+      {
+         "name":"Elemental MediaConvert",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/mediaconvert/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaConvert.svg"
+      },
+      {
+         "name":"Elemental MediaPackage",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/mediapackage/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaPackage.svg"
+      },
+      {
+         "name":"Elemental MediaLive",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/medialive/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaLive.svg"
+      },
+      {
+         "name":"Elemental MediaStore",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/mediastore/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaStore.svg"
+      },
+      {
+         "name":"Elemental MediaTailor",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/mediatailor/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaTailor.svg"
+      },
+      {
+         "name":"Kinesis Video Streams",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/kinesis/video-streams/",
+         "announced":{
+            "date":"Event Hubs",
+            "link":"https://azure.microsoft.com/en-us/services/event-hubs/"
+         },
+         "released":{
+            "date":"Dataflow",
+            "link":"https://cloud.google.com/dataflow"
+         },
+         "icon":"icons/Amazon-Kinesis-Video-Streams.svg"
+      },
+      {
+         "name":"Elemental MediaConnect",
+         "category":"Media Services",
+         "product":"https://aws.amazon.com/mediaconnect/",
+         "announced":{
+            "date":"Media Services",
+            "link":"https://azure.microsoft.com/en-us/services/media-services/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Elemental-MediaConnect.svg"
+      },
+      {
+         "name":"Snowball Family",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/snow/",
+         "announced":{
+            "date":"Data Box",
+            "link":"https://azure.microsoft.com/en-us/services/databox/"
+         },
+         "released":{
+            "date":"Transfer Service",
+            "link":"https://cloud.google.com/storage-transfer/"
+         },
+         "icon":"icons/AWS-Snowball-Family.svg"
+      },
+      {
+         "name":"Database Migration Service",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/dms/",
+         "announced":{
+            "date":"Database Migration Service",
+            "link":"https://azure.microsoft.com/en-us/services/database-migration/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Database-Migration-Service.svg"
+      },
+      {
+         "name":"Application Discovery Service",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/application-discovery/",
+         "announced":{
+            "date":"Migrate",
+            "link":"https://azure.microsoft.com/en-us/services/azure-migrate/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Application-Discovery-Service.svg"
+      },
+      {
+         "name":"Server Migration Service",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/server-migration-service/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Server-Migration-Service.svg"
+      },
+      {
+         "name":"Migration Hub",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/migration-hub/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Migration-Hub.svg"
+      },
+      {
+         "name":"DataSync",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/datasync/",
+         "announced":{
+            "date":"File Sync",
+            "link":"https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning/"
+         },
+         "released":{
+            "date":"Cloud Data Transfer",
+            "link":"https://cloud.google.com/products/data-transfer/"
+         },
+         "icon":"icons/AWS-DataSync.svg"
+      },
+      {
+         "name":"Transfer for SFTP",
+         "category":"Migration & Transfer",
+         "product":"https://aws.amazon.com/sftp/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Transfer-for-SFTP.svg"
+      },
+      {
+         "name":"Device Farm",
+         "category":"Mobile",
+         "product":"https://aws.amazon.com/device-farm/",
+         "announced":{
+            "date":"Visual Studio App Center",
+            "link":"https://azure.microsoft.com/en-us/services/app-center/"
+         },
+         "released":{
+            "date":"Firebase Test Lab",
+            "link":"https://firebase.google.com/docs/test-lab"
+         },
+         "icon":"icons/AWS-Device-Farm.svg"
+      },
+      {
+         "name":"Pinpoint",
+         "category":"Mobile",
+         "product":"https://aws.amazon.com/pinpoint/",
+         "announced":{
+            "date":"Notification Hubs",
+            "link":"https://azure.microsoft.com/en-us/services/notification-hubs/"
+         },
+         "released":{
+            "date":"Firebase Cloud Messaging",
+            "link":"https://firebase.google.com/docs/cloud-messaging"
+         },
+         "icon":"icons/Amazon-Pinpoint.svg"
+      },
+      {
+         "name":"Amplify",
+         "category":"Mobile",
+         "product":"https://aws.amazon.com/amplify/",
+         "announced":{
+            "date":"Xamarin with Azure",
+            "link":"https://azure.microsoft.com/en-us/features/xamarin/"
+         },
+         "released":{
+            "date":"Firebase",
+            "link":"https://firebase.google.com/"
+         },
+         "icon":"icons/AWS-Amplify.svg"
+      },
+      {
+         "name":"AppSync",
+         "category":"Mobile",
+         "product":"https://aws.amazon.com/appsync/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-AppSync.svg"
+      },
+      {
+         "name":"CloudFront",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/cloudfront/",
+         "announced":{
+            "date":"Content Delivery Network",
+            "link":"https://azure.microsoft.com/en-us/services/cdn/"
+         },
+         "released":{
+            "date":"Cloud CDN",
+            "link":"https://cloud.google.com/cdn/"
+         },
+         "icon":"icons/Amazon-CloudFront.svg"
+      },
+      {
+         "name":"Elastic Load Balancing (ELB)",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/elasticloadbalancing/",
+         "announced":{
+            "date":"Load Balancer",
+            "link":"https://azure.microsoft.com/en-us/services/load-balancer/"
+         },
+         "released":{
+            "date":"Cloud Load Balancing",
+            "link":"https://cloud.google.com/load-balancing"
+         },
+         "icon":"icons/Elastic-Load-Balancing.svg"
+      },
+      {
+         "name":"Route 53",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/route53/",
+         "announced":{
+            "date":"DNS",
+            "link":"https://azure.microsoft.com/en-us/services/dns/"
+         },
+         "released":{
+            "date":"Cloud DNS",
+            "link":"https://cloud.google.com/dns"
+         },
+         "icon":"icons/Amazon-Route-53.svg"
+      },
+      {
+         "name":"Direct Connect",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/directconnect/",
+         "announced":{
+            "date":"ExpressRoute",
+            "link":"https://azure.microsoft.com/en-us/services/expressroute/"
+         },
+         "released":{
+            "date":"Cloud Interconnect",
+            "link":"https://cloud.google.com/hybrid-connectivity"
+         },
+         "icon":"icons/AWS-Direct-Connect.svg"
+      },
+      {
+         "name":"VPC",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/vpc/",
+         "announced":{
+            "date":"Virtual Network",
+            "link":"https://azure.microsoft.com/en-us/services/virtual-network/"
+         },
+         "released":{
+            "date":"Virtual Private Cloud (VPC)",
+            "link":"https://cloud.google.com/vpc/"
+         },
+         "icon":"icons/Amazon-VPC.svg"
+      },
+      {
+         "name":"VPN",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/vpn/",
+         "announced":{
+            "date":"VPN Gateway",
+            "link":"https://azure.microsoft.com/en-us/services/vpn-gateway/"
+         },
+         "released":{
+            "date":"Cloud Interconnect",
+            "link":"https://cloud.google.com/hybrid-connectivity"
+         },
+         "icon":"icons/Amazon-VPC.svg"
+      },
+      {
+         "name":"API Gateway",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/api-gateway/",
+         "announced":{
+            "date":"API Management",
+            "link":"https://azure.microsoft.com/en-us/services/api-management/"
+         },
+         "released":{
+            "date":"Cloud Endpoints",
+            "link":"https://cloud.google.com/endpoints/"
+         },
+         "icon":"icons/Amazon-API-Gateway.svg"
+      },
+      {
+         "name":"Global Accelerator",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/global-accelerator/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Global-Accelerator.svg"
+      },
+      {
+         "name":"Cloud Map",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/cloud-map/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Cloud-Map.svg"
+      },
+      {
+         "name":"App Mesh",
+         "category":"Networking & Content Delivery",
+         "product":"https://aws.amazon.com/app-mesh/",
+         "announced":{
+            "date":"Service Fabric Mesh",
+            "link":"https://docs.microsoft.com/en-us/azure/service-fabric-mesh/service-fabric-mesh-overview"
+         },
+         "released":{
+            "date":"Cloud Service Mesh",
+            "link":"https://cloud.google.com/anthos/service-mesh/"
+         },
+         "icon":"icons/AWS-App-Mesh.svg"
+      },
+      {
+         "name":"RoboMaker",
+         "category":"Robotics",
+         "product":"https://aws.amazon.com/robomaker/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-RoboMaker.svg"
+      },
+      {
+         "name":"Ground Station",
+         "category":"Satellite",
+         "product":"https://aws.amazon.com/ground-station/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Ground-Station.svg"
+      },
+      {
+         "name":"Detective",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/detective/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         }
+      },      
+      {
+         "name":"Identity & Access Management",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/iam/",
+         "announced":{
+            "date":"Active Directory",
+            "link":"https://azure.microsoft.com/en-us/services/active-directory/"
+         },
+         "released":{
+            "date":"Cloud IAM",
+            "link":"https://cloud.google.com/iam/"
+         },
+         "icon":"icons/AWS-Identity-and-Access-Management.svg"
+      },
+      {
+         "name":"CloudHSM",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/cloudhsm/",
+         "announced":{
+            "date":"Key Vault",
+            "link":"https://azure.microsoft.com/en-us/services/key-vault/"
+         },
+         "released":{
+            "date":"Google Cloud KMS",
+            "link":"https://cloud.google.com/kms/"
+         },
+         "icon":"icons/AWS-CloudHSM.svg"
+      },
+      {
+         "name":"Cognito",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/cognito/",
+         "announced":{
+            "date":"Active Directory B2C",
+            "link":"https://azure.microsoft.com/en-us/services/active-directory/external-identities/b2c/"
+         },
+         "released":{
+            "date":"Identity Platform",
+            "link":"https://cloud.google.com/identity-platform"
+         },
+         "icon":"icons/Amazon-Cognito.svg"
+      },
+      {
+         "name":"Directory Service",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/directoryservice/",
+         "announced":{
+            "date":"Active Directory Domain Services",
+            "link":"https://azure.microsoft.com/en-us/services/active-directory-ds/"
+         },
+         "released":{
+            "date":"Managed Service for Microsoft Active Directory",
+            "link":"https://cloud.google.com/managed-microsoft-ad"
+         },
+         "icon":"icons/AWS-Directory-Service.svg"
+      },
+      {
+         "name":"Key Management Service",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/kms/",
+         "announced":{
+            "date":"Key Vault",
+            "link":"https://azure.microsoft.com/en-us/services/key-vault/"
+         },
+         "released":{
+            "date":"Cloud Key Management Service",
+            "link":"https://cloud.google.com/kms/"
+         },
+         "icon":"icons/AWS-Key-Management-Service.svg"
+      },
+      {
+         "name":"WAF",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/waf/",
+         "announced":{
+            "date":"Web Application Firewall",
+            "link":"https://azure.microsoft.com/en-us/services/web-application-firewall/"
+         },
+         "released":{
+            "date":"Cloud Armor",
+            "link":"https://cloud.google.com/armor"
+         },
+         "icon":"icons/AWS-WAF.svg"
+      },
+      {
+         "name":"Certificate Manager",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/certificate-manager/",
+         "announced":{
+            "date":"App Service Certificate",
+            "link":"https://azure.microsoft.com/en-us/blog/internals-of-app-service-certificate/"
+         },
+         "released":{
+            "date":"Google-managed SSL certificates",
+            "link":"https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs"
+         },
+         "icon":"icons/AWS-Certificate-Manager.svg"
+      },
+      {
+         "name":"Inspector",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/inspector/",
+         "announced":{
+            "date":"Security Center",
+            "link":"https://azure.microsoft.com/en-us/services/security-center/"
+         },
+         "released":{
+            "date":"Cloud Security Scanner",
+            "link":"https://cloud.google.com/security-scanner"
+         },
+         "icon":"icons/Amazon-Inspector.svg"
+      },
+      {
+         "name":"Shield",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/shield/",
+         "announced":{
+            "date":"DDos Protection Service",
+            "link":"https://docs.microsoft.com/en-us/azure/security/fundamentals/ddos-best-practices/"
+         },
+         "released":{
+            "date":"Cloud Armor",
+            "link":"https://cloud.google.com/armor/"
+         },
+         "icon":"icons/AWS-Shield.svg"
+      },
+      {
+         "name":"Artifact",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/artifact/",
+         "announced":{
+            "date":"Service Trust Portal",
+            "link":"https://servicetrust.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/AWS-Artifact.svg"
+      },
+      {
+         "name":"Macie",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/macie/",
+         "announced":{
+            "date":"Azure Security Center",
+            "link":"https://azure.microsoft.com/en-us/services/security-center/"
+         },
+         "released":{
+            "date":"Cloud Data Loss Prevention",
+            "link":"https://cloud.google.com/dlp"
+         },
+         "icon":"icons/Amazon-Macie.svg"
+      },
+      {
+         "name":"GuardDuty",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/guardduty/",
+         "announced":{
+            "date":"Advanced Threat Protection",
+            "link":"https://azure.microsoft.com/en-us/features/azure-advanced-threat-protection/"
+         },
+         "released":{
+            "date":"Event Threat Detection",
+            "link":"https://cloud.google.com/event-threat-detection"
+         },
+         "icon":"icons/Amazon-GuardDuty.svg"
+      },
+      {
+         "name":"Single Sign-On",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/single-sign-on/",
+         "announced":{
+            "date":"Azure Active Directory single sign-on",
+            "link":"https://azure.microsoft.com/en-us/services/active-directory/sso/"
+         },
+         "released":{
+            "date":"Single sign-on (SSO)",
+            "link":"https://cloud.google.com/identity/sso/"
+         },
+         "icon":"icons/AWS-Single-Sign-On.svg"
+      },
+      {
+         "name":"Secrets Manager",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/secrets-manager/",
+         "announced":{
+            "date":"Azure Security Center",
+            "link":"https://azure.microsoft.com/en-us/services/security-center/"
+         },
+         "released":{
+            "date":"Secret Manager",
+            "link":"https://cloud.google.com/secret-manager"
+         },
+         "icon":"icons/AWS-Secrets-Manager.svg"
+      },
+      {
+         "name":"Security Hub",
+         "category":"Security, Identity & Compliance",
+         "product":"https://aws.amazon.com/security-hub/",
+         "announced":{
+            "date":"Azure Security Center",
+            "link":"https://azure.microsoft.com/en-us/services/security-center/"
+         },
+         "released":{
+            "date":"Security Command Center",
+            "link":"https://cloud.google.com/security-command-center"
+         },
+         "icon":"icons/AWS-Security-Hub.svg"
+      },
+      {
+         "name":"Simple Storage Service (S3)",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/s3/",
+         "announced":{
+            "date":"Blob Storage",
+            "link":"https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction/"
+         },
+         "released":{
+            "date":"Cloud Storage",
+            "link":"https://cloud.google.com/storage"
+         },
+         "icon":"icons/Amazon-Simple-Storage-Service-S3.svg"
+      },
+      {
+         "name":"S3 Glacier",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/glacier/",
+         "announced":{
+            "date":"Storage archive access tier",
+            "link":"https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers"
+         },
+         "released":{
+            "date":"Cloud Storage for data archiving",
+            "link":"https://cloud.google.com/storage/archival"
+         },
+         "icon":"icons/Amazon-S3-Glacier.svg"
+      },
+      {
+         "name":"Storage Gateway",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/storagegateway/",
+         "announced":{
+            "date":"StorSimple",
+            "link":"https://azure.microsoft.com/en-us/services/storsimple/"
+         },
+         "released":{
+            "date":"Egnyte Sync",
+            "link":"https://cloud.google.com/solutions/partners/egnyte-enabling-hybrid-storage"
+         },
+         "icon":"icons/AWS-Storage-Gateway.svg"
+      },
+      {
+         "name":"Elastic File System (EFS)",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/efs/",
+         "announced":{
+            "date":"Files",
+            "link":"https://azure.microsoft.com/en-us/services/storage/files/"
+         },
+         "released":{
+            "date":"Filestore",
+            "link":"https://cloud.google.com/filestore"
+         },
+         "icon":"icons/Amazon-Elastic-File-System-EFS.svg"
+      },
+      {
+         "name":"FSx for Lustre",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/fsx/lustre/",
+         "announced":{
+            "date":"File Storage",
+            "link":"https://azure.microsoft.com/en-us/services/storage/files/"
+         },
+         "released":{
+            "date":"Filestore",
+            "link":"https://cloud.google.com/filestore"
+         },
+         "icon":"icons/Amazon-FSx-for-Lustre.svg"
+      },
+      {
+         "name":"FSx for Windows File Server",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/fsx/windows/",
+         "announced":{
+            "date":"File Storage",
+            "link":"https://azure.microsoft.com/en-us/services/storage/files/"
+         },
+         "released":{
+            "date":"Filestore",
+            "link":"https://cloud.google.com/filestore"
+         },
+         "icon":"icons/Amazon-FSx-for-Windows-File-Server.svg"
+      },
+      {
+         "name":"Backup",
+         "category":"Storage",
+         "product":"https://aws.amazon.com/backup/",
+         "announced":{
+            "date":"Backup",
+            "link":"https://azure.microsoft.com/en-us/services/backup/"
+         },
+         "released":{
+            "date":"Cloud Storage for data archiving",
+            "link":"https://cloud.google.com/storage/archival"
+         },
+         "icon":"icons/AWS-Backup.svg"
+      },
+      {
+         "name":"Event Bridge",
+         "category":"Application Integration",
+         "product":"https://aws.amazon.com/eventbridge/",
+         "announced":{
+            "date":"N/A",
+            "link":"https://azure.microsoft.com/"
+         },
+         "released":{
+            "date":"N/A",
+            "link":"https://cloud.google.com/gcp/"
+         },
+         "icon":"icons/Amazon-Event-Bridge.svg"
+      }
+   ]
+}

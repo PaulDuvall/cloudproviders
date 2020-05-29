@@ -1,0 +1,14 @@
+{
+  "cloudprovider": {
+    "S": "AWS"
+  },
+  "servicename": {
+    "S": "Elastic Computer Cloud"
+  },
+  "id": {
+    "N": 2000
+  },
+  "url": {
+    "S": "https://aws.amazon.com/codepipeline/"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "servicename": $input.json('$.servicename'),
+  "cloudprovider": $input.json('$.cloudprovider'),
+  "id": $input.json('$.id'),
+  "url": $input.json('$.url')
+}

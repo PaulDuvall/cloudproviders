@@ -1,0 +1,81 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'Serverless app using API Gateway, Lambda, and DynamoDB'
+Resources:
+  HttpApiGetFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: LambdaGetDynamoDB
+      Handler: index-get.handler
+      Runtime: nodejs12.x
+      CodeUri: .
+      Description: A function that reads from a DynamoDB table
+      MemorySize: 128
+      Timeout: 120
+      Policies:
+        - AWSLambdaExecute
+        - DynamoDBReadPolicy:
+            TableName:
+              Ref: MyDynamoDBTable
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: MyDynamoDBTable
+      Events:
+        SimpleCase:
+          Type: HttpApi
+          Properties:
+            ApiId:
+              Ref: MyApi
+            Method: GET
+            Path: /clouds
+            TimeoutInMillis: 15000
+  HttpApiPutFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: LambdaWriteDynamoDB
+      Handler: index-put.handler
+      Runtime: nodejs12.x
+      CodeUri: .
+      Description: A function that writes to a DynamoDB table
+      MemorySize: 128
+      Timeout: 120
+      Policies:
+        - AWSLambdaExecute
+        - DynamoDBWritePolicy:
+            TableName:
+              Ref: MyDynamoDBTable
+  MyDynamoDBTable:
+    Type: 'AWS::DynamoDB::Table'
+    DeletionPolicy: Delete
+    Properties:
+      TableName: CloudProviders
+      AttributeDefinitions:
+        - AttributeName: ServiceName
+          AttributeType: S
+        - AttributeName: id
+          AttributeType: 'N'
+      KeySchema:
+        - AttributeName: ServiceName
+          KeyType: HASH
+        - AttributeName: id
+          KeyType: RANGE
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+  MyApi:
+    Type: 'AWS::Serverless::HttpApi'
+    Properties:
+      CorsConfiguration:
+        AllowOrigins:
+          - '*'
+Outputs:
+  PutDataLambdaFunctionUrl:
+    Description: Link for Lambda Function that puts data into DDB Table
+    Value:
+      'Fn::Sub': >-
+        https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/${HttpApiPutFunction}
+  GetDataApi:
+    Description: API Gateway endpoint URL for Data Listing Function
+    Value:
+      'Fn::Sub': 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/clouds'
