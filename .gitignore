@@ -4,6 +4,7 @@ taskcat_outputs
 
 # Temporary Directories
 .tmp
+tmp-gitrepo
 
 # MacOS
 __MACOSX
