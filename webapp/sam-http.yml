@@ -88,8 +88,7 @@ Resources:
     Properties:
       LogGroupName: !Ref CloudWatchLambdaLogsGroup
       LogStreamName: cloudproviders-log-stream
-
-
+      
 Outputs:
   PutDataLambdaFunctionUrl:
     Description: Link for Lambda Function that puts data into DDB Table
