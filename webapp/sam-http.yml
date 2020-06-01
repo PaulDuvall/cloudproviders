@@ -2,7 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: 'Serverless app using API Gateway, Lambda, and DynamoDB'
 Globals:
-  Runtime: nodejs12.x
   Function:
     Timeout: 120
     MemorySize: 128
