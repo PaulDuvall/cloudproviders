@@ -38,7 +38,7 @@ Resources:
           Type: CloudWatchLogs
           Properties:
             LogGroupName: !Ref CloudWatchLambdaLogsGroup
-            FilterPattern: Hello log processor
+            FilterPattern: "" 
   HttpApiPutFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -52,20 +52,6 @@ Resources:
         - DynamoDBWritePolicy:
             TableName:
               Ref: MyDynamoDBTable
-      Events:
-        SimpleCase:
-          Type: HttpApi
-          Properties:
-            ApiId:
-              Ref: MyApi
-            Method: POST
-            Path: /clouds
-            TimeoutInMillis: 15000
-        LogsProcessor:
-          Type: CloudWatchLogs
-          Properties:
-            LogGroupName: !Ref CloudWatchLambdaLogsGroup
-            FilterPattern: Hello log processor
   
   MyDynamoDBTable:
     Type: 'AWS::DynamoDB::Table'
@@ -101,7 +87,7 @@ Resources:
     Type: AWS::Logs::LogStream
     Properties:
       LogGroupName: !Ref CloudWatchLambdaLogsGroup
-      LogStreamName: sam-log-stream
+      LogStreamName: cloudproviders-log-stream
 
 
 Outputs:
