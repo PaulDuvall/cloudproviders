@@ -8,7 +8,7 @@ Resources:
       FunctionName: LambdaGetDynamoDB
       Handler: index-get.handler
       Runtime: nodejs12.x
-      CodeUri: .
+      CodeUri: src/
       Description: A function that reads from a DynamoDB table
       MemorySize: 128
       Timeout: 120
@@ -36,7 +36,7 @@ Resources:
       FunctionName: LambdaWriteDynamoDB
       Handler: index-put.handler
       Runtime: nodejs12.x
-      CodeUri: .
+      CodeUri: src/
       Description: A function that writes to a DynamoDB table
       MemorySize: 128
       Timeout: 120
