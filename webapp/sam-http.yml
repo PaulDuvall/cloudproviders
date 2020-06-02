@@ -55,7 +55,6 @@ Resources:
             LogGroupName:
               Ref: CloudWatchLambdaLogsGroup
             FilterPattern: ''
-      MemorySize: ''
   HttpApiPutFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
