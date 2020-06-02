@@ -24,7 +24,7 @@ cd cloudproviders/webapp
 aws s3 mb s3://pmd-safe-app-$(aws sts get-caller-identity --output text --query 'Account')
 zip -r pmd-safe-app.zip .
 mkdir zipfiles
-cp pipeline.yml zipfiles
+cp pipeline-safe.yml zipfiles
 mv pmd-safe-app.zip zipfiles
 cd zipfiles
 

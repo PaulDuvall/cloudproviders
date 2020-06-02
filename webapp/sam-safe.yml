@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion : '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: A sample Lambda Safe Deployment Application
+Description: A sample Lambda Safe Deployment Application. https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html
 
 Resources:
   mySNSTopic:
@@ -13,7 +13,7 @@ Resources:
       Runtime: nodejs12.x
       AutoPublishAlias: live
       DeploymentPreference:
-          Type: Linear10PercentEvery1Minute
+          Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
           Hooks:
             PreTraffic: !Ref preTrafficHook
 
