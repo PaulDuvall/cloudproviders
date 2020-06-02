@@ -23,7 +23,7 @@ Resources:
         Type: CodeDeployDefault.LambdaLinear10PercentEvery1Minute
         Hooks:
           PreTraffic:
-            Ref: preTrafficHook
+            Ref: PreTrafficTests
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
@@ -55,6 +55,7 @@ Resources:
             LogGroupName:
               Ref: CloudWatchLambdaLogsGroup
             FilterPattern: ''
+      MemorySize: ''
   HttpApiPutFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -102,9 +103,10 @@ Resources:
       LogGroupName:
         Ref: CloudWatchLambdaLogsGroup
       LogStreamName: cloudproviders-log-stream
-  preTrafficHook:
+  PreTrafficTests:
     Type: 'AWS::Serverless::Function'
     Properties:
+      FunctionName: PreTrafficTests
       Handler: preTrafficHook.handler
       CodeUri: src/
       Policies:
@@ -126,7 +128,6 @@ Resources:
                   - HttpApiGetFunction
                   - Arn
       Runtime: nodejs12.x
-      FunctionName: CodeDeployHook_preTrafficHook
       DeploymentPreference:
         Enabled: false
       Environment:
