@@ -33,8 +33,6 @@ Resources:
             TriggerTargetArn:
               Ref: mySNSTopic
       Policies:
-        - AWSLambdaBasicExecutionRole
-        - AWSCodeDeployRoleForLambda
         - DynamoDBReadPolicy:
             TableName:
               Ref: MyDynamoDBTable
