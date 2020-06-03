@@ -33,7 +33,6 @@ Resources:
               Ref: mySNSTopic
       Policies:
         - AWSLambdaExecute
-        - LambdaInvokePolicy
         - DynamoDBReadPolicy:
             TableName:
               Ref: MyDynamoDBTable
