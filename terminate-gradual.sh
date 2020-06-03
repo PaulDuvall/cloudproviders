@@ -8,10 +8,10 @@ aws s3api list-buckets --query 'Buckets[?starts_with(Name, `pmd-safe-`) == `true
 
 sleep 20
 
-aws cloudformation delete-stack --stack-name pmd-safe2-app-us-east-1
+aws cloudformation delete-stack --stack-name pmd-safe-app-us-east-1
 
 sleep 50
 
-aws cloudformation delete-stack --stack-name pmd-safe2-app
+aws cloudformation delete-stack --stack-name pmd-safe-app
 
 sleep 25

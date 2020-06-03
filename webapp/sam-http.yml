@@ -43,6 +43,7 @@ Resources:
             Method: GET
             Path: /clouds
             TimeoutInMillis: 15000
+      Description: ''
   MyDynamoDBTable:
     Type: 'AWS::DynamoDB::Table'
     DeletionPolicy: Delete
@@ -98,3 +99,8 @@ Resources:
         Variables:
           CurrentVersion:
             Ref: safeTest.Version
+Outputs:
+  GetDataApi:
+    Description: API Gateway endpoint URL for Data Listing Function
+    Value:
+      'Fn::Sub': 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/clouds'
