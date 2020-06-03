@@ -19,6 +19,7 @@ Resources:
       CodeUri: src/
       Description: A function that reads from a DynamoDB table
       AutoPublishAlias: live
+      MemorySize: 128
       DeploymentPreference:
         Type: CodeDeployDefault.LambdaLinear10PercentEvery1Minute
         Hooks:
@@ -33,6 +34,7 @@ Resources:
               Ref: mySNSTopic
       Policies:
         - AWSLambdaExecute
+        - AWSCodeDeployRoleForLambda
         - DynamoDBReadPolicy:
             TableName:
               Ref: MyDynamoDBTable
