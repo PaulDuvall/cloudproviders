@@ -3,9 +3,6 @@
 # ./safe-terminate.sh
 
 sudo rm -rf tmp-gitrepo
-mkdir tmp-gitrepo
-cd tmp-gitrepo
-git clone https://github.com/PaulDuvall/cloudproviders.git
 
 aws s3api list-buckets --query 'Buckets[?starts_with(Name, `pmd-safe-`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
 
