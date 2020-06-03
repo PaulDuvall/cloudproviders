@@ -1,0 +1,20 @@
+#!/bin/bash
+# sudo chmod +x *.sh
+# ./safe-terminate.sh
+
+sudo rm -rf tmp-gitrepo
+mkdir tmp-gitrepo
+cd tmp-gitrepo
+git clone https://github.com/PaulDuvall/cloudproviders.git
+
+aws s3api list-buckets --query 'Buckets[?starts_with(Name, `pmd-safe-`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
+
+sleep 20
+
+aws cloudformation delete-stack --stack-name pmd-safe-app-us-east-1
+
+sleep 50
+
+aws cloudformation delete-stack --stack-name pmd-safe-app
+
+sleep 25
