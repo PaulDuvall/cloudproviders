@@ -1,30 +1,23 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: 'Serverless app using API Gateway, Lambda, and DynamoDB'
-Globals:
-  Function:
-    Timeout: 120
-    MemorySize: 128
-  Api:
-    EndpointConfiguration: REGIONAL
+Description: >-
+  A sample Lambda Safe Deployment Application.
+  https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
-  HttpApiGetFunction:
+  safeTest:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: LambdaGetDynamoDB
       Handler: index-get.handler
-      Runtime: nodejs12.x
       CodeUri: src/
-      Description: A function that reads from a DynamoDB table
+      Runtime: nodejs12.x
       AutoPublishAlias: live
-      MemorySize: 128
       DeploymentPreference:
         Type: CodeDeployDefault.LambdaLinear10PercentEvery1Minute
         Hooks:
           PreTraffic:
-            Ref: PreTrafficTests
+            Ref: preTrafficHook
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
@@ -32,6 +25,7 @@ Resources:
             TriggerName: TestTrigger
             TriggerTargetArn:
               Ref: mySNSTopic
+      MemorySize: 128
       Policies:
         - DynamoDBReadPolicy:
             TableName:
@@ -49,19 +43,6 @@ Resources:
             Method: GET
             Path: /clouds
             TimeoutInMillis: 15000
-  HttpApiPutFunction:
-    Type: 'AWS::Serverless::Function'
-    Properties:
-      FunctionName: LambdaWriteDynamoDB
-      Handler: index-put.handler
-      Runtime: nodejs12.x
-      CodeUri: src/
-      Description: A function that writes to a DynamoDB table
-      Policies:
-        - AWSLambdaExecute
-        - DynamoDBWritePolicy:
-            TableName:
-              Ref: MyDynamoDBTable
   MyDynamoDBTable:
     Type: 'AWS::DynamoDB::Table'
     DeletionPolicy: Delete
@@ -86,10 +67,9 @@ Resources:
       CorsConfiguration:
         AllowOrigins:
           - '*'
-  PreTrafficTests:
+  preTrafficHook:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: PreTrafficTests
       Handler: preTrafficHook.handler
       CodeUri: src/
       Policies:
@@ -108,22 +88,13 @@ Resources:
                 - 'lambda:InvokeFunction'
               Resource:
                 'Fn::GetAtt':
-                  - HttpApiGetFunction
+                  - safeTest
                   - Arn
       Runtime: nodejs12.x
+      FunctionName: CodeDeployHook_preTrafficHook
       DeploymentPreference:
         Enabled: false
       Environment:
         Variables:
           CurrentVersion:
-            Ref: HttpApiGetFunction.Version
-Outputs:
-  PutDataLambdaFunctionUrl:
-    Description: Link for Lambda Function that puts data into DDB Table
-    Value:
-      'Fn::Sub': >-
-        https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/${HttpApiPutFunction}
-  GetDataApi:
-    Description: API Gateway endpoint URL for Data Listing Function
-    Value:
-      'Fn::Sub': 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/clouds'
+            Ref: safeTest.Version

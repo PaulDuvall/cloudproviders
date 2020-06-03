@@ -25,6 +25,7 @@ Resources:
             TriggerName: TestTrigger
             TriggerTargetArn:
               Ref: mySNSTopic
+      MemorySize: 128
   preTrafficHook:
     Type: 'AWS::Serverless::Function'
     Properties:
