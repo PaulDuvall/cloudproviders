@@ -104,3 +104,7 @@ Outputs:
     Description: API Gateway endpoint URL for Data Listing Function
     Value:
       'Fn::Sub': 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/clouds'
+  LambdaFunctionUrl:
+    Description: URL for Lambda Get Function
+    Value:
+      'Fn::Sub': 'https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${safeTest}/aliases/live?tab=configuration'

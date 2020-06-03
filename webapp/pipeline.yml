@@ -389,3 +389,7 @@ Outputs:
       Fn::GetAtt:
       - MyLambdaTrustRole
       - Arn
+  CodeCommitUrl:
+    Description: URL for CodeCommit Repo
+    Value:
+      'Fn::Sub': 'https://console.aws.amazon.com/codesuite/codecommit/repositories/${CodeCommitRepo}/browse?region=${AWS::Region}'
