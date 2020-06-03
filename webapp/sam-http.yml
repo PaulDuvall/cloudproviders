@@ -28,11 +28,12 @@ Resources:
           - TriggerEvents:
               - DeploymentSuccess
               - DeploymentFailure
-            TriggerName: TestTrigger
+            TriggerName: TestThisTrigger
             TriggerTargetArn:
               Ref: mySNSTopic
       Policies:
         - AWSLambdaExecute
+        - LambdaInvokePolicy
         - DynamoDBReadPolicy:
             TableName:
               Ref: MyDynamoDBTable
