@@ -29,7 +29,7 @@ Resources:
           - TriggerEvents:
               - DeploymentSuccess
               - DeploymentFailure
-            TriggerName: TestThisTrigger
+            TriggerName: TestTrigger
             TriggerTargetArn:
               Ref: mySNSTopic
       Policies:
@@ -49,12 +49,6 @@ Resources:
             Method: GET
             Path: /clouds
             TimeoutInMillis: 15000
-        LogsProcessor:
-          Type: CloudWatchLogs
-          Properties:
-            LogGroupName:
-              Ref: CloudWatchLambdaLogsGroup
-            FilterPattern: ''
   HttpApiPutFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -92,16 +86,6 @@ Resources:
       CorsConfiguration:
         AllowOrigins:
           - '*'
-  CloudWatchLambdaLogsGroup:
-    Type: 'AWS::Logs::LogGroup'
-    Properties:
-      RetentionInDays: 7
-  CloudWatchLambdaLogsStream:
-    Type: 'AWS::Logs::LogStream'
-    Properties:
-      LogGroupName:
-        Ref: CloudWatchLambdaLogsGroup
-      LogStreamName: cloudproviders-log-stream
   PreTrafficTests:
     Type: 'AWS::Serverless::Function'
     Properties:
