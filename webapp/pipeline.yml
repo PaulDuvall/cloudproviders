@@ -276,7 +276,7 @@ Resources:
       Environment:
         EnvironmentVariables:
         - Name: S3_BUCKET
-          Value: !Ref PipelineBucket
+          Value: !Ref CodeCommitS3Bucket
         - Name: SAM_STACK_NAME
           Type: PLAINTEXT
           Value:
