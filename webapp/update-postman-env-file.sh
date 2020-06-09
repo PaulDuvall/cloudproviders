@@ -11,7 +11,7 @@ echo "SAM_STACK_NAME is $SAM_STACK_NAME"
 
 # Get the 3rd Output value in the CloudFormation stack
 api_gateway_url=`aws cloudformation describe-stacks \
-  --stack-name '$SAM_STACK_NAME' \
+  --stack-name $SAM_STACK_NAME \
   --query "Stacks[0].Outputs[3].{OutputValueValue:OutputValue}" --output text`
 
 echo "API Gateway URL:" ${api_gateway_url}
