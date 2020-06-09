@@ -12,7 +12,7 @@ echo "SAM_STACK_NAME is $SAM_STACK_NAME"
 # Get the 3rd Output value (GetDataApi) in the CloudFormation stack https://github.com/PaulDuvall/cloudproviders/blob/master/webapp/sam-http.yml
 api_gateway_url=`aws cloudformation describe-stacks \
   --stack-name $SAM_STACK_NAME \
-  --query "Stacks[0].Outputs[3].{OutputValueValue:OutputValue}" --output text`
+  --query "Stacks[0].Outputs[?OutputKey=='GetDataApi'].OutputValue" --output text`
 
 echo "API Gateway URL:" ${api_gateway_url}
 
