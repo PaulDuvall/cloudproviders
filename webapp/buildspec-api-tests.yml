@@ -1,0 +1,29 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - node --version
+      - npm install newman --global
+      - yum install -y jq
+  pre_build:
+    commands:
+      - >-
+        aws s3 cp "s3://${S3_BUCKET}/postman-env-files/postman_environment.json"
+        .
+      - >-
+        aws s3 cp "s3://${S3_BUCKET}/postman-env-files/collection.json"
+        .
+      - chmod +x *.sh
+      - ./update-postman-env-file.sh ${SAM_STACK_NAME}
+  build:
+    commands:
+      - >-
+        newman run collection.json --environment postman_environment.json -r
+        junit
+reports:
+  JUnitReports:
+    files:
+      - '**/*'
+    base-directory: newman

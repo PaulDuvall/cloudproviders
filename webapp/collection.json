@@ -1,0 +1,52 @@
+{
+  "info": {
+    "_postman_id": "fdc022b4-e44b-4555-81ca-deb2b20a4118",
+    "name": "collections.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "_postman_id": "ff084be0-a787-43a1-ba06-2df76af9f7ca",
+      "request": {
+        "method": "GET",
+        "header": [
+
+        ],
+        "url": "https://jsonplaceholder.typicode.com/posts"
+      },
+      "response": [
+
+      ]
+    },
+    {
+      "name": "cloudproviders",
+      "_postman_id": "ff107732-e27d-4aec-9456-8aceea5f9e45",
+      "request": {
+        "method": "GET",
+        "header": [
+
+        ],
+        "url": "{{apigw-root}}"
+      },
+      "response": [
+
+      ]
+    }
+  ],
+  "protocolProfileBehavior": {
+  }
+}

@@ -263,6 +263,38 @@ Resources:
             - Ref: AWS::StackName
         Type: CODECOMMIT
       TimeoutInMinutes: 10
+  CodeBuildApiTest:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Description: Test API using Postman
+      ServiceRole:
+        Fn::GetAtt:
+        - CodeBuildRole
+        - Arn
+      Artifacts:
+        Type: NO_ARTIFACTS
+      Environment:
+        EnvironmentVariables:
+        - Name: S3_BUCKET
+          Value: !Ref PipelineBucket
+        - Name: SAM_STACK_NAME
+          Type: PLAINTEXT
+          Value:
+            Fn::Sub: ${AWS::StackName}-${AWS::Region}
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
+      Source:
+        BuildSpec: buildspec-api-tests.yml
+        Location:
+          Fn::Join:
+          - ''
+          - - https://git-codecommit.
+            - Ref: AWS::Region
+            - ".amazonaws.com/v1/repos/"
+            - Ref: AWS::StackName
+        Type: CODECOMMIT
+      TimeoutInMinutes: 10
   PipelineBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
@@ -367,6 +399,19 @@ Resources:
             ProjectName:
               Ref: CodeBuildInsertData
           RunOrder: 3
+        - InputArtifacts:
+          - Name: MyApp
+          Name: APITest
+          ActionTypeId:
+            Category: Build
+            Owner: AWS
+            Version: '1'
+            Provider: CodeBuild
+          OutputArtifacts: []
+          Configuration:
+            ProjectName:
+              Ref: CodeBuildApiTest
+          RunOrder: 4
       ArtifactStore:
         Type: S3
         Location: !Ref PipelineBucket
