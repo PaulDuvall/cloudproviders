@@ -1,6 +1,6 @@
 #!/bin/bash
 # sudo chmod +x *.sh
-# ./safe-terminate.sh
+# ./terminate-gradual.sh
 
 sudo rm -rf tmp-gitrepo
 
@@ -10,8 +10,8 @@ sleep 20
 
 aws cloudformation delete-stack --stack-name pmd-safe-app-us-east-1
 
-sleep 50
+aws cloudformation wait stack-delete-complete --stack-name pmd-safe-app-us-east-1
 
 aws cloudformation delete-stack --stack-name pmd-safe-app
 
-sleep 25
+aws cloudformation wait stack-delete-complete --stack-name pmd-safe-app

@@ -6,7 +6,7 @@ Description: >-
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
-  safeTest:
+  getData:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: index-get.handler
@@ -89,7 +89,7 @@ Resources:
                 - 'lambda:InvokeFunction'
               Resource:
                 'Fn::GetAtt':
-                  - safeTest
+                  - getData
                   - Arn
       Runtime: nodejs12.x
       FunctionName: CodeDeployHook_preTrafficHook
@@ -98,7 +98,7 @@ Resources:
       Environment:
         Variables:
           CurrentVersion:
-            Ref: safeTest.Version
+            Ref: getData.Version
 Outputs:
   GetDataApi:
     Description: API Gateway endpoint URL for Data Listing Function
@@ -107,12 +107,15 @@ Outputs:
   LambdaFunctionUrl:
     Description: URL for Lambda Get Function
     Value:
-      'Fn::Sub': 'https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${safeTest}/aliases/live?tab=configuration'
+      'Fn::Sub': >-
+        https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${getData}/aliases/live?tab=configuration
   CodeDeployUrl:
     Description: URL for CodeDeploy Deployments
     Value:
-      'Fn::Sub': 'https://console.aws.amazon.com/codesuite/codedeploy/deployments?region=${AWS::Region}'
+      'Fn::Sub': >-
+        https://console.aws.amazon.com/codesuite/codedeploy/deployments?region=${AWS::Region}
   DynamoDBUrl:
     Description: URL for DynamoDB CloudProviders table
     Value:
-      'Fn::Sub': 'https://console.aws.amazon.com/dynamodb/home?region=${AWS::Region}#tables:selected=${MyDynamoDBTable};tab=items'
+      'Fn::Sub': >-
+        https://console.aws.amazon.com/dynamodb/home?region=${AWS::Region}#tables:selected=${MyDynamoDBTable};tab=items
