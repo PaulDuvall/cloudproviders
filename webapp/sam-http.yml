@@ -12,10 +12,6 @@ Resources:
       CodeUri: src/
       Runtime: nodejs12.x
       AutoPublishAlias: live
-      Environment:
-        Variables:
-          databaseName: 
-            Ref: MyDynamoDBTable
       DeploymentPreference:
         Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
         Hooks:
