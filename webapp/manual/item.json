@@ -6,7 +6,7 @@
     "S": "Elastic Computer Cloud"
   },
   "id": {
-    "N": 2000
+    "N": "2000"
   },
   "URL": {
     "S": "https://aws.amazon.com/ec2/"
