@@ -1,8 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: >-
-  A sample Lambda Safe Deployment Application.
-  https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html
+  Deploy Serverless application using API Gateway, Lambda, and DynamoDB
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
@@ -13,6 +12,10 @@ Resources:
       CodeUri: src/
       Runtime: nodejs12.x
       AutoPublishAlias: live
+      Environment:
+        Variables:
+          databaseName: 
+            Ref: MyDynamoDBTable
       DeploymentPreference:
         Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
         Hooks:
