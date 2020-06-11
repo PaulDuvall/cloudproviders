@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: >-
-  Deploy Serverless application using API Gateway, Lambda, and DynamoDB
+Description: 'Deploy Serverless application using API Gateway, Lambda, and DynamoDB'
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
@@ -42,12 +41,13 @@ Resources:
             Method: GET
             Path: /clouds
             TimeoutInMillis: 15000
-      Description: 'Get data from DynamoDB table'
+      Description: Get data from DynamoDB table
   MyDynamoDBTable:
     Type: 'AWS::DynamoDB::Table'
     DeletionPolicy: Delete
     Properties:
-      TableName: CloudProviders
+      TableName: 
+        Ref: AWS::StackName
       AttributeDefinitions:
         - AttributeName: ServiceName
           AttributeType: S
