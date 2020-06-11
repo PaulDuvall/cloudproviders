@@ -202,12 +202,7 @@ Resources:
   CodeBuildGetFunction:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name:
-        Fn::Join:
-        - ''
-        - - Run
-          - "CodePipeline"
-          - Ref: AWS::StackName
+      Name: !Sub ${AWS::StackName}-getddb-data
       Description: Build application
       ServiceRole:
         Fn::GetAtt:
@@ -224,13 +219,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-get-function.yml
-        Location:
-          Fn::Join:
-          - ''
-          - - https://git-codecommit.
-            - Ref: AWS::Region
-            - ".amazonaws.com/v1/repos/"
-            - Ref: AWS::StackName
+        Location: !Sub https://git-codecommit.${AWS::Region}.amazonaws.com/v1/repos/${AWS::Region}
         Type: CODECOMMIT
       TimeoutInMinutes: 10
       Tags:
@@ -255,13 +244,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-insert-data.yml
-        Location:
-          Fn::Join:
-          - ''
-          - - https://git-codecommit.
-            - Ref: AWS::Region
-            - ".amazonaws.com/v1/repos/"
-            - Ref: AWS::StackName
+        Location: !Sub https://git-codecommit.${AWS::Region}.amazonaws.com/v1/repos/${AWS::Region}
         Type: CODECOMMIT
       TimeoutInMinutes: 10
   CodeBuildApiTest:
@@ -287,13 +270,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-api-tests.yml
-        Location:
-          Fn::Join:
-          - ''
-          - - https://git-codecommit.
-            - Ref: AWS::Region
-            - ".amazonaws.com/v1/repos/"
-            - Ref: AWS::StackName
+        Location: !Sub https://git-codecommit.${AWS::Region}.amazonaws.com/v1/repos/${AWS::Region}
         Type: CODECOMMIT
       TimeoutInMinutes: 10
   PipelineBucket:
@@ -357,14 +334,7 @@ Resources:
               - CloudFormationTrustRole
               - Arn
             Capabilities: CAPABILITY_IAM
-            StackName:
-              Fn::Join:
-              - ''
-              - - ""
-                - Ref: AWS::StackName
-                - "-"
-                - Ref: AWS::Region
-                - ""
+            StackName: !Sub ${AWS::StackName}-${AWS::Region}
             TemplatePath: Lambda-Get-Artifact::template-export-get.json
           RunOrder: 1
         - ActionTypeId:
@@ -416,14 +386,7 @@ Outputs:
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
     Export:
-      Name:
-        Fn::Join:
-        - ''
-        - - ""
-          - Ref: AWS::StackName
-          - "-"
-          - Ref: AWS::Region
-          - "-LambdaTrustRole"
+      Name: !Sub ${AWS::StackName}-${AWS::Region}-LambdaTrustRole
     Value:
       Fn::GetAtt:
       - MyLambdaTrustRole
