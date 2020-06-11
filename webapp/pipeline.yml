@@ -375,14 +375,7 @@ Resources:
           Configuration:
             ActionMode: CHANGE_SET_EXECUTE
             ChangeSetName: pipeline-changeset
-            StackName:
-              Fn::Join:
-              - ''
-              - - ""
-                - Ref: AWS::StackName
-                - "-"
-                - Ref: AWS::Region
-                - ""
+            StackName: !Sub ${AWS::StackName}-${AWS::Region}
           InputArtifacts: []
           Name: ExecuteChangeSet
           OutputArtifacts: []
