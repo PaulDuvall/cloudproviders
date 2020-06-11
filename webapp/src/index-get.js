@@ -7,7 +7,7 @@ exports.handler = function(event, context, callback){
     console.log('processing event: %j', event);
 
     let scanningParameters = {
-        TableName: 'CloudProviders',
+        TableName: process.env.TABLE_NAME,
         Limit: 100 //maximum result of 100 items
     };
 
