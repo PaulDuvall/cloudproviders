@@ -1,6 +1,6 @@
 #!/bin/bash
 # sudo chmod +x *.sh
-# ./cloudproviders-serverless-app.sh
+# ./launch-stack.sh
 
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
 
@@ -33,15 +33,6 @@ aws cloudformation delete-stack --stack-name $CFNSTACK
 
 aws cloudformation wait stack-delete-complete --stack-name $CFNSTACK
 
-##############
-
-aws cloudformation delete-stack --stack-name pmd-serverless-app-us-east-1
-
-aws cloudformation wait stack-delete-complete --stack-name pmd-serverless-app-us-east-1
-
-aws cloudformation delete-stack --stack-name pmd-serverless-app
-
-aws cloudformation wait stack-delete-complete --stack-name pmd-serverless-app
 
 cd cloudproviders/webapp
 
