@@ -2,14 +2,38 @@
 # sudo chmod +x *.sh
 # ./cloudproviders-serverless-app.sh
 
-sudo rm -rf tmp-gitrepo
-mkdir tmp-gitrepo
-cd tmp-gitrepo
+AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
+
+MYNAME=${1:-pmd}
+PROJECTNAME=${2:-cloudproviders}
+TMPDIR=${3:-.tmp-gitrepo}   
+S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
+SAMSTACK=${5:-$PROJECTNAME-$MYNAME-$AWS_REGION}
+CFNSTACK=${6:-$PROJECTNAME-$MYNAME}
+PIPELINEYAML=${7:-pipeline.yml}
+OTHER=${8:-pmd-serverless}
+
+sudo rm -rf $TMPDIR
+mkdir $TMPDIR
+cd $TMPDIR
 git clone https://github.com/PaulDuvall/cloudproviders.git
 
-aws s3api list-buckets --query 'Buckets[?starts_with(Name, `pmd-serverless-`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
+aws s3api list-buckets --query 'Buckets[?starts_with(Name, `'$OTHER'`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
+
+aws s3api list-buckets --query 'Buckets[?starts_with(Name, `'$S3BUCKET'`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
+
 
 sleep 20
+
+aws cloudformation delete-stack --stack-name $SAMSTACK
+
+aws cloudformation wait stack-delete-complete --stack-name $SAMSTACK
+
+aws cloudformation delete-stack --stack-name $CFNSTACK
+
+aws cloudformation wait stack-delete-complete --stack-name $CFNSTACK
+
+##############
 
 aws cloudformation delete-stack --stack-name pmd-serverless-app-us-east-1
 
@@ -21,20 +45,20 @@ aws cloudformation wait stack-delete-complete --stack-name pmd-serverless-app
 
 cd cloudproviders/webapp
 
-aws s3 mb s3://pmd-serverless-app-$(aws sts get-caller-identity --output text --query 'Account')
+aws s3 mb s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
 
 aws s3 cp collection.json \
-s3://pmd-serverless-app-$(aws sts get-caller-identity --output text --query 'Account')/postman-env-files/collection.json
+s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')/postman-env-files/collection.json
 
 aws s3 cp postman_environment.json \
-s3://pmd-serverless-app-$(aws sts get-caller-identity --output text --query 'Account')/postman-env-files/postman_environment.json
+s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')/postman-env-files/postman_environment.json
 
-zip -r pmd-serverless-app.zip .
+zip -r $S3BUCKET.zip .
 mkdir zipfiles
-cp pipeline.yml zipfiles
-mv pmd-serverless-app.zip zipfiles
+cp $PIPELINEYAML zipfiles
+mv $S3BUCKET.zip zipfiles
 cd zipfiles
 
-aws s3 sync . s3://pmd-serverless-app-$(aws sts get-caller-identity --output text --query 'Account')
+aws s3 sync . s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
 
-aws cloudformation create-stack --stack-name pmd-serverless-app --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://pipeline.yml --parameters ParameterKey=CodeCommitS3Bucket,ParameterValue=pmd-serverless-app-$(aws sts get-caller-identity --output text --query 'Account') ParameterKey=CodeCommitS3Key,ParameterValue=pmd-serverless-app.zip
+aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=CodeCommitS3Bucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account') ParameterKey=CodeCommitS3Key,ParameterValue=$S3BUCKET.zip
