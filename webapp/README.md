@@ -67,7 +67,7 @@ As a user, when you click on the URL provided as a CloudFormation Stack Output t
 
 You can see this workflow in the image below.
 
-![Solution Workflow](https://diagrams-pmd-sitebucket-n0b3ceywwbxz.s3.amazonaws.com/serverless_web_apps.png)
+![Solution Workflow](https://github.com/PaulDuvall/cloudproviders/blob/master/webapp/images/serverlessapp-workflow.png)
 
 As an engineer, you will run a simple AWS CLI command to launch the CloudFormation Stack from the CloudFormation template. This stack automatically provisions storing files, storing code, running builds, and orchestrating the deployment pipeline of the key solution resources.
 
@@ -79,7 +79,7 @@ All of the resources in this solution are defined in greater detail below.
 
 You can see this architecture in the image below.
 
-![Solution Architecture](https://github.com/PaulDuvall/cloudproviders/blob/master/webapp/images/serverless-app-arch.png)
+![Solution Architecture](https://diagrams-pmd-sitebucket-n0b3ceywwbxz.s3.amazonaws.com/serverless_web_apps.png)
 
 
 #### CloudFormation Stack
