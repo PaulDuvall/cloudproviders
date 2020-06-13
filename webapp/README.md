@@ -79,7 +79,7 @@ All of the resources in this solution are defined in greater detail below.
 
 You can see this architecture in the image below.
 
-![Solution Architecture](https://diagrams-pmd-sitebucket-n0b3ceywwbxz.s3.amazonaws.com/serverless_web_apps.png)
+![Solution Architecture](https://diagrams-pmd-sitebucket-ghrur4bor8pl.s3.amazonaws.com/clustered_web_services.png)
 
 
 #### CloudFormation Stack
