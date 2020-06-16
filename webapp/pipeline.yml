@@ -441,6 +441,9 @@ Outputs:
   PipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
+  ServerlessWebAppUrl:
+    Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_apps.png
+    Description: Diagram for Serverless Web Apps
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
     Export:
