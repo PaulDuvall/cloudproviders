@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - python --version
+      - 'curl -O https://bootstrap.pypa.io/get-pip.py'
+      - python3 get-pip.py --user
+      - pip install --upgrade pip
+      - pip install --user aws-sam-cli
+      - pip install pipenv
+      - pip install diagrams
+      - pipenv install diagrams
+      - pip install poetry
+      - yum -y install graphviz
+  build:
+    commands:
+      - python diagrams-app.py
+      - mkdir diagrams
+      - mv ./*.png diagrams
+      - 'aws s3 cp --recursive --acl public-read ./diagrams s3://$S3_BUCKET'
+artifacts:
+  files:
+    - '**/*'

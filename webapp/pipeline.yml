@@ -277,6 +277,47 @@ Resources:
         Location: !Sub https://git-codecommit.${AWS::Region}.amazonaws.com/v1/repos/${AWS::Region}
         Type: CODECOMMIT
       TimeoutInMinutes: 10
+  CodeBuildDiagrams:
+    Type: AWS::CodeBuild::Project
+    DependsOn: CodeBuildRole
+    Properties:
+      Name:
+        Ref: AWS::StackName
+      Description: Build application
+      ServiceRole:
+        Fn::GetAtt:
+        - CodeBuildRole
+        - Arn
+      Artifacts:
+        Type: NO_ARTIFACTS
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
+        EnvironmentVariables:
+          - Name: S3_BUCKET
+            Type: PLAINTEXT
+            Value:
+              Fn::Sub: ${SiteBucket}
+          - Name: SAM_STACK_NAME
+            Type: PLAINTEXT
+            Value:
+              Fn::Sub: ${AWS::StackName}-${AWS::Region}
+      Source:
+        BuildSpec: buildspec-diagrams.yml
+        Location: !Sub https://git-codecommit.${AWS::Region}.amazonaws.com/v1/repos/${AWS::Region}
+        Type: CODECOMMIT
+      TimeoutInMinutes: 10
+      Tags:
+      - Key: Owner
+        Value: MyCodeBuildProject
+  SiteBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
   PipelineBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
@@ -318,6 +359,19 @@ Resources:
           Configuration:
             ProjectName:
               Ref: CodeBuildGetFunction
+          RunOrder: 1
+        - InputArtifacts:
+          - Name: MyApp
+          Name: GenerateDiagrams
+          ActionTypeId:
+            Category: Test
+            Owner: AWS
+            Version: '1'
+            Provider: CodeBuild
+          OutputArtifacts: []
+          Configuration:
+            ProjectName:
+              Ref: CodeBuildDiagrams
           RunOrder: 1
       - Name: Deploy
         Actions:
