@@ -15,9 +15,8 @@ from diagrams.aws.devtools import CommandLineInterface
 with Diagram("Serverless Web Apps", show=False, direction="TB"):
     
     
-    
     with Cluster("Cloud9"):
-        cli = CommandLineInterface("Launch CFN Stack")
+        cli = CommandLineInterface("AWS CLI")
     
     with Cluster("CloudFormation"):
         cloudformation = Cloudformation("Stack")
