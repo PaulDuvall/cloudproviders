@@ -14,7 +14,11 @@ from diagrams.aws.devtools import CommandLineInterface
 
 with Diagram("Serverless Web Apps", show=False, direction="TB"):
     
-
+    
+    
+    with Cluster("Cloud9"):
+        cli = CommandLineInterface("Launch CFN Stack")
+    
     with Cluster("CloudFormation"):
         cloudformation = Cloudformation("Stack")
         cloudformation >> IdentityAndAccessManagementIam("IAM")
@@ -22,6 +26,7 @@ with Diagram("Serverless Web Apps", show=False, direction="TB"):
         cloudformation >> Codebuild("CodeBuild")
         cloudformation >> Codepipeline("CodePipeline")
         cloudformation >> S3("S3")
+        cli >>cloudformation
 
     with Cluster("CodePipeline"):
         codepipeline = Codepipeline("Pipeline")
