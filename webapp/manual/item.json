@@ -3,7 +3,7 @@
     "S": "AWS"
   },
   "ServiceName": {
-    "S": "Elastic Computer Cloud"
+    "S": "EC2"
   },
   "id": {
     "N": "2000"
