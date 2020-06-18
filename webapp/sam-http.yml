@@ -32,6 +32,8 @@ Resources:
         Variables:
           TABLE_NAME:
             Ref: MyDynamoDBTable
+          REGION:
+            Ref: AWS::Region
       Events:
         GetDataApi:
           Type: HttpApi
@@ -46,8 +48,8 @@ Resources:
     Type: 'AWS::DynamoDB::Table'
     DeletionPolicy: Delete
     Properties:
-      TableName: 
-        Ref: AWS::StackName
+      TableName:
+        Ref: 'AWS::StackName'
       AttributeDefinitions:
         - AttributeName: ServiceName
           AttributeType: S

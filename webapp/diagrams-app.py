@@ -11,12 +11,24 @@ from diagrams.aws.devtools import Codedeploy
 from diagrams.aws.devtools import Codepipeline
 from diagrams.aws.management import Cloudformation
 from diagrams.aws.devtools import CommandLineInterface
+from diagrams.aws.general import User
+from diagrams.aws.general import General
+from diagrams.aws.general import Marketplace
+from diagrams.onprem.client import Client
 
 with Diagram("Serverless Web Apps", show=False, direction="TB"):
     
     
-    with Cluster("Cloud9"):
+    with Cluster("Launch API URL"):
+        user = User("User")
+        console = Client("Browser")
+        user >> console
+
+    
+    with Cluster("Cloud9", direction="LR"):
+        builder = User("Builder")
         cli = CommandLineInterface("AWS CLI")
+        builder >> cli
     
     with Cluster("CloudFormation"):
         cloudformation = Cloudformation("Stack")
@@ -25,7 +37,7 @@ with Diagram("Serverless Web Apps", show=False, direction="TB"):
         cloudformation >> Codebuild("CodeBuild")
         cloudformation >> Codepipeline("CodePipeline")
         cloudformation >> S3("S3")
-        cli >>cloudformation
+        cli >> cloudformation
 
     with Cluster("CodePipeline"):
         codepipeline = Codepipeline("Pipeline")
@@ -35,7 +47,13 @@ with Diagram("Serverless Web Apps", show=False, direction="TB"):
         
     with Cluster("Serverless Application Model"):
         sam = Cloudformation("SAM Template")
-        sam >> APIGateway("API Gateway")
-        sam >> Lambda("Lambda")
-        sam >> DynamodbTable("DynamoDB")     
+        apigateway = APIGateway("API Gateway")
+        mylambda = Lambda("Lambda")
+        ddb  = DynamodbTable("DynamoDB")   
+        sam >> apigateway
+        sam >> mylambda
+        sam >> ddb
+
         cloudformation >> codepipeline >> sam
+        
+        console >> apigateway

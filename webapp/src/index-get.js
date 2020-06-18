@@ -1,7 +1,7 @@
 console.log('Gets data from DynamoDB table')
 
 const AWS = require('aws-sdk');
-const docClient = new AWS.DynamoDB.DocumentClient({region: 'us-east-1'});
+const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 
 exports.handler = function(event, context, callback){
     console.log('processing event: %j', event);
