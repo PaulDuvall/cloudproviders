@@ -7,7 +7,7 @@ from diagrams.aws.database import DynamodbTable
 
 from diagrams.aws.devtools import CommandLineInterface
 
-with Diagram("Workflow", show=False, direction="LR"):
+with Diagram("Serverless Web App Workflow", show=False, direction="LR"):
 
     user = User("User")
     api = APIGateway("API Gateway")

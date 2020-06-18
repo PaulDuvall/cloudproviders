@@ -444,6 +444,9 @@ Outputs:
   ServerlessWebAppUrl:
     Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_apps.png
     Description: Diagram for Serverless Web Apps
+  ServerlessWebWorkflowUrl:
+    Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_app_workflow.png
+    Description: Diagram for Serverless Web Apps Simple Workflow
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
     Export:
