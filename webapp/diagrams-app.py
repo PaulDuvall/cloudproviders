@@ -13,7 +13,6 @@ from diagrams.aws.management import Cloudformation
 from diagrams.aws.devtools import CommandLineInterface
 from diagrams.aws.general import User
 from diagrams.aws.general import General
-from diagrams.aws.general import Marketplace
 from diagrams.onprem.client import Client
 
 with Diagram("Serverless Web Apps", show=False, direction="TB"):
