@@ -79,7 +79,7 @@ All of the resources in this solution are defined in greater detail below.
 
 You can see this architecture in the image below.
 
-![Solution Architecture](https://github.com/PaulDuvall/cloudproviders/blob/master/webapp/images/serverless-app-arch-2.png)
+![Solution Architecture](https://github.com/PaulDuvall/cloudproviders/blob/master/webapp/images/serverless-app-arch.png)
 
 
 #### CloudFormation Stack
