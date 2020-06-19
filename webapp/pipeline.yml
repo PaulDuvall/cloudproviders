@@ -136,6 +136,7 @@ Resources:
             - codedeploy:*
             - dynamodb:*
             - iam:CreateRole
+            - iam:AttachRolePolicy
             - lambda:*
             - logs:*
             - s3:*
