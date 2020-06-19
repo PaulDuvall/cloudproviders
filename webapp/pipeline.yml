@@ -135,6 +135,7 @@ Resources:
             - codebuild:*
             - codedeploy:*
             - dynamodb:*
+            - iam:CreateRole
             - lambda:*
             - logs:*
             - s3:*
