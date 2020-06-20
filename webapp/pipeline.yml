@@ -124,12 +124,14 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - codebuild:BatchGetBuilds
+            - codebuild:CreateProject
+            - codebuild:CreateReport
+            - codebuild:CreateReportGroup
+            - codebuild:DeleteProject
             - codebuild:ListProjects
             - codebuild:StartBuild
-            - codebuild:CreateProject
-            - codebuild:BatchGetBuilds
-            - codebuild:CreateReportGroup
-            - codebuild:CreateReport
+            - codebuild:UpdateReport
             Effect: Allow
             Resource: "*"
           - Action:
