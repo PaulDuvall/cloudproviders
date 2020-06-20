@@ -132,6 +132,7 @@ Resources:
             - codebuild:ListProjects
             - codebuild:StartBuild
             - codebuild:UpdateReport
+            - codebuild:BatchPutTestCases
             Effect: Allow
             Resource: "*"
           - Action:
