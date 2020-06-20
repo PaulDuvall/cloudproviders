@@ -129,6 +129,7 @@ Resources:
             - codebuild:CreateProject
             - codebuild:BatchGetBuilds
             - codebuild:CreateReportGroup
+            - codebuild:CreateReport
             Effect: Allow
             Resource: "*"
           - Action:
