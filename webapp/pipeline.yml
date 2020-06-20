@@ -65,14 +65,23 @@ Resources:
         PolicyDocument:
           Statement:
           - Action:
+            - s3:PutObject
+            - s3:GetObject
+            - s3:GetObjectVersion
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - apigateway:*
             - cloudformation:*
-            - cloudwatch:*
             - codebuild:*
             - dynamodb:*
             - lambda:*
-            - logs:*
-            - s3:*
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
