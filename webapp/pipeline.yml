@@ -65,23 +65,32 @@ Resources:
         PolicyDocument:
           Statement:
           - Action:
-            - s3:PutObject
-            - s3:GetObject
-            - s3:GetObjectVersion
+            - lambda:ListFunctions
+            - lambda:DeleteFunction
+            - lambda:GetFunction
+            - lambda:DeleteAlias
+            - lambda:RemovePermission
+            - lambda:AddPermission
+            - lambda:CreateFunction
+            - lambda:GetPolicy
+            - lambda:ListVersionsByFunction
+            - lambda:PublishVersion
+            - lambda:GetFunctionConfiguration
             Effect: Allow
             Resource: "*"
           - Action:
-            - logs:CreateLogGroup
-            - logs:CreateLogStream
-            - logs:PutLogEvents
+            - apigateway:DeleteApi
+            - apigateway:DeleteStage
+            - apigateway:CreateStage
+            - apigateway:ImportApi
             Effect: Allow
             Resource: "*"
           - Action:
-            - apigateway:*
             - cloudformation:*
             - codebuild:*
             - dynamodb:*
-            - lambda:*
+            - s3:*
+            - logs:*
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
