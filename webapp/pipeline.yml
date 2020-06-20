@@ -120,30 +120,7 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
-            - s3:CreateBucket
-            - s3:PutBucketEncryption
-            - s3:PutBucketLogging
-            - s3:DeleteBucket
-            - s3:GetBucketLocation
-            - s3:GetBucketEncryption
-            - s3:PutBucketPolicy
-            - s3:GetBucketPolicy
-            - s3:PutBucketVersioning
-            - s3:DeleteBucketPolicy
-            - s3:PutBucketLifecycle
-            - s3:PutBucketWebsite
-            - s3:PutBucketNotification
-            - s3:GetBucketWebsite
-            - s3:GetBucketCors
-            - s3:GetBucketReplication
-            - s3:GetBucketVersioning
-            - s3:GetBucketTagging
-            - s3:GetBucketNotification
-            - s3:GetBucketLifecycle
-            - s3:GetBucketLogging
-            - s3:PutBucketTagging
-            - s3:PutBucketCors
-            - s3:PutBucketPublicAccessBlock
+            - s3:*
             Effect: Allow
             Resource: "*"
           - Action:
