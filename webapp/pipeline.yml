@@ -48,6 +48,44 @@ Resources:
         PolicyName: MyLambdaWorkerPolicy
       RoleName: !Sub ${AWS::StackName}-lambda-${AWS::Region}
     Type: AWS::IAM::Role
+# iam:ListRolePolicies
+# iam:ListInstanceProfilesForRole
+# iam:ListPoliciesGrantingServiceAccess
+# iam:GenerateServiceLastAccessedDetails
+# iam:GetRolePolicy
+# iam:GetRole
+# iam:ListAttachedRolePolicies
+# iam:ListRoleTags
+# logs:DescribeLogStreams
+# codebuild:StartBuild
+# codebuild:CreateProject
+# codebuild:DeleteProject
+# codebuild:BatchGetBuilds
+# cloudformation:DescribeStacks
+# lambda:ListFunctions
+# lambda:DeleteFunction
+# lambda:GetFunction
+# lambda:DeleteAlias
+# lambda:RemovePermission
+# lambda:AddPermission
+# lambda:CreateFunction
+# lambda:GetPolicy
+# lambda:ListVersionsByFunction
+# lambda:PublishVersion
+# lambda:GetFunctionConfiguration
+# apigateway:DeleteApi
+# apigateway:DeleteStage
+# apigateway:CreateStage
+# apigateway:ImportApi
+# s3:PutBucketTagging
+# s3:PutBucketWebsite
+# s3:CreateBucket
+# s3:DeleteBucket
+# s3:ListBuckets
+# s3:GetBucketPolicy
+# dynamodb:DescribeTable
+# dynamodb:DeleteTable
+# dynamodb:CreateTable
   CodeBuildRole:
     Type: AWS::IAM::Role
     Properties:
@@ -86,9 +124,14 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - dynamodb:DescribeTable
+            - dynamodb:DeleteTable
+            - dynamodb:CreateTable
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudformation:*
             - codebuild:*
-            - dynamodb:*
             - s3:*
             - logs:*
             Effect: Allow
