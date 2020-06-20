@@ -103,6 +103,12 @@ Resources:
         PolicyDocument:
           Statement:
           - Action:
+            - logs:DescribeLogStreams
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource: "*"
+          - Action:
             - lambda:ListFunctions
             - lambda:DeleteFunction
             - lambda:GetFunction
@@ -134,7 +140,6 @@ Resources:
             - cloudformation:*
             - codebuild:*
             - s3:*
-            - logs:*
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
