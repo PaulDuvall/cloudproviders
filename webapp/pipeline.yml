@@ -92,17 +92,17 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
-            - lambda:ListFunctions
-            - lambda:DeleteFunction
-            - lambda:GetFunction
-            - lambda:DeleteAlias
-            - lambda:RemovePermission
             - lambda:AddPermission
             - lambda:CreateFunction
+            - lambda:DeleteAlias
+            - lambda:DeleteFunction
+            - lambda:GetFunction
+            - lambda:GetFunctionConfiguration
             - lambda:GetPolicy
+            - lambda:ListFunctions
             - lambda:ListVersionsByFunction
             - lambda:PublishVersion
-            - lambda:GetFunctionConfiguration
+            - lambda:RemovePermission
             Effect: Allow
             Resource: "*"
           - Action:
@@ -113,9 +113,9 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
-            - dynamodb:DescribeTable
-            - dynamodb:DeleteTable
             - dynamodb:CreateTable
+            - dynamodb:DeleteTable
+            - dynamodb:DescribeTable
             - dynamodb:PutItem
             Effect: Allow
             Resource: "*"
