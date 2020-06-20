@@ -127,6 +127,7 @@ Resources:
             - dynamodb:DescribeTable
             - dynamodb:DeleteTable
             - dynamodb:CreateTable
+            - dynamodb:PutItem
             Effect: Allow
             Resource: "*"
           - Action:

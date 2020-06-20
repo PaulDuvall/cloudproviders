@@ -94,7 +94,7 @@ Resources:
                   - Arn
       Runtime: nodejs12.x
       FunctionName: 
-        'Fn::Sub': 'CodeDeployHook_preTrafficHook${AWS::StackName}'
+        'Fn::Sub': 'codedeploy_pretraffic-hook-${AWS::StackName}'
       DeploymentPreference:
         Enabled: false
       Environment:
