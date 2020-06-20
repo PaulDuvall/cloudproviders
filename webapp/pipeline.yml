@@ -136,7 +136,17 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
-            - cloudformation:*
+            - cloudformation:CreateChangeSet
+            - cloudformation:CreateStack
+            - cloudformation:DeleteStack
+            - cloudformation:DescribeChangeSet
+            - cloudformation:DescribeStackEvents
+            - cloudformation:DescribeStacks
+            - cloudformation:DescribeStackResource
+            - cloudformation:DescribeStackResources
+            - cloudformation:ExecuteChangeSet
+            - cloudformation:GetTemplate
+            - cloudformation:GetTemplateSummary
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
