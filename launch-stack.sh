@@ -11,7 +11,7 @@ S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
 SAMSTACK=${5:-$PROJECTNAME-$MYNAME-$AWS_REGION}
 CFNSTACK=${6:-$PROJECTNAME-$MYNAME}
 PIPELINEYAML=${7:-pipeline.yml}
-OTHER=${8:-pmd-serverless}
+OTHER=${8:-cloudproviders-pmd}
 
 sudo rm -rf $TMPDIR
 mkdir $TMPDIR
