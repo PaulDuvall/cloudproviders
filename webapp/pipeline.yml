@@ -120,16 +120,18 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
-            - s3:GetBucketLocation
-            - s3:DeleteBucket
-            - s3:GetBucketVersioning
-            - s3:PutBucketPolicy
-            - s3:CreateBucket
+            - s3:*
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - codebuild:ListProjects
+            - codebuild:StartBuild
+            - codebuild:CreateProject
+            - codebuild:BatchGetBuilds
             Effect: Allow
             Resource: "*"
           - Action:
             - cloudformation:*
-            - codebuild:*
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
