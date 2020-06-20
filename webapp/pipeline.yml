@@ -62,30 +62,12 @@ Resources:
 # codebuild:DeleteProject
 # codebuild:BatchGetBuilds
 # cloudformation:DescribeStacks
-# lambda:ListFunctions
-# lambda:DeleteFunction
-# lambda:GetFunction
-# lambda:DeleteAlias
-# lambda:RemovePermission
-# lambda:AddPermission
-# lambda:CreateFunction
-# lambda:GetPolicy
-# lambda:ListVersionsByFunction
-# lambda:PublishVersion
-# lambda:GetFunctionConfiguration
-# apigateway:DeleteApi
-# apigateway:DeleteStage
-# apigateway:CreateStage
-# apigateway:ImportApi
 # s3:PutBucketTagging
 # s3:PutBucketWebsite
 # s3:CreateBucket
 # s3:DeleteBucket
 # s3:ListBuckets
 # s3:GetBucketPolicy
-# dynamodb:DescribeTable
-# dynamodb:DeleteTable
-# dynamodb:CreateTable
   CodeBuildRole:
     Type: AWS::IAM::Role
     Properties:
@@ -138,9 +120,16 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - s3:GetBucketLocation
+            - s3:DeleteBucket
+            - s3:GetBucketVersioning
+            - s3:PutBucketPolicy
+            - s3:CreateBucket
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudformation:*
             - codebuild:*
-            - s3:*
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
