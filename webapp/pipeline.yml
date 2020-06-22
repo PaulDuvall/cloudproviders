@@ -206,9 +206,14 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - dynamodb:CreateTable	
+            - dynamodb:DeleteTable	
+            - dynamodb:DescribeTable	
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
             - codebuild:*
-            - dynamodb:*
             - iam:*
             - lambda:*
             - logs:*
