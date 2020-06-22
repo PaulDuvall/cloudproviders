@@ -188,6 +188,7 @@ Resources:
             - apigateway:CreateStage
             - apigateway:Delete*
             - apigateway:Put*
+            - apigateway:Post*
             Effect: Allow
             Resource: "*"
           - Action:
