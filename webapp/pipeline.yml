@@ -273,7 +273,10 @@ Resources:
             - codecommit:UploadArchive
             - codebuild:BatchGetBuilds
             - codebuild:StartBuild
-            - cloudformation:*
+            - cloudformation:DescribeStacks
+            - cloudformation:CreateChangeSet
+            - cloudformation:DescribeChangeSet
+            - cloudformation:ExecuteChangeSet
             Resource: "*"
             Effect: Allow
           Version: '2012-10-17'
