@@ -186,8 +186,7 @@ Resources:
           - Action:
             - apigateway:ImportApi
             - apigateway:CreateStage
-            - apigateway:DeleteStage
-            - apigateway:DeleteApi
+            - apigateway:Delete*
             - apigateway:Put*
             Effect: Allow
             Resource: "*"
