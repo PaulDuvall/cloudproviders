@@ -188,12 +188,19 @@ Resources:
             - apigateway:CreateStage
             - apigateway:DeleteStage
             - apigateway:DeleteApi
+            - apigateway:Put*
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - codedeploy:DeleteApplication	
+            - codedeploy:CreateDeploymentGroup
+            - codedeploy:CreateApplication
+            - codedeploy:DeleteDeploymentGroup
             Effect: Allow
             Resource: "*"
           - Action:
             - cloudwatch:*
             - codebuild:*
-            - codedeploy:*
             - dynamodb:*
             - iam:*
             - lambda:*
