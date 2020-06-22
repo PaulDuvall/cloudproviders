@@ -222,10 +222,14 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - logs:CreateLogStream	
+            - logs:CreateLogGroup
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
             - iam:*
             - lambda:*
-            - logs:*
             - s3:*
             - events:*
             Effect: Allow
