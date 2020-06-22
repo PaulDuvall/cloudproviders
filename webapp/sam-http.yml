@@ -93,8 +93,6 @@ Resources:
                   - getData
                   - Arn
       Runtime: nodejs12.x
-      FunctionName: 
-        'Fn::Sub': 'codedeploy_pretraffic-hook-${AWS::StackName}'
       DeploymentPreference:
         Enabled: false
       Environment:

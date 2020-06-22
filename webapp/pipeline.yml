@@ -212,8 +212,17 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - codebuild:UpdateReport	
+            - codebuild:CreateReport
+            - codebuild:BatchPutTestCases
+            - codebuild:BatchGetBuilds
+            - codebuild:CreateReportGroup
+            - codebuild:StartBuild
+            - codebuild:DeleteBuild
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
-            - codebuild:*
             - iam:*
             - lambda:*
             - logs:*
