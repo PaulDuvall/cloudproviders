@@ -200,6 +200,12 @@ Resources:
             Effect: Allow
             Resource: "*"
           - Action:
+            - sns:CreateTopic	
+            - sns:DeleteTopic
+            - sns:GetTopicAttributes
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
             - codebuild:*
             - dynamodb:*
@@ -207,7 +213,6 @@ Resources:
             - lambda:*
             - logs:*
             - s3:*
-            - sns:*
             - events:*
             Effect: Allow
             Resource: "*"
