@@ -189,6 +189,7 @@ Resources:
             - apigateway:Delete*
             - apigateway:Put*
             - apigateway:Post*
+            - apigateway:TagResource
             Effect: Allow
             Resource: "*"
           - Action:
