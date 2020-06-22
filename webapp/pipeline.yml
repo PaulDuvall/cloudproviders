@@ -267,8 +267,12 @@ Resources:
             Resource: "*"
             Effect: Allow
           - Action:
-            - codecommit:*
-            - codebuild:*
+            - codecommit:GetBranch
+            - codecommit:GetCommit
+            - codecommit:GetUploadArchiveStatus
+            - codecommit:UploadArchive
+            - codebuild:BatchGetBuilds
+            - codebuild:StartBuild
             - cloudformation:*
             Resource: "*"
             Effect: Allow
