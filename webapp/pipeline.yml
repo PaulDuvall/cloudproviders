@@ -48,26 +48,6 @@ Resources:
         PolicyName: MyLambdaWorkerPolicy
       RoleName: !Sub ${AWS::StackName}-lambda-${AWS::Region}
     Type: AWS::IAM::Role
-# iam:ListRolePolicies
-# iam:ListInstanceProfilesForRole
-# iam:ListPoliciesGrantingServiceAccess
-# iam:GenerateServiceLastAccessedDetails
-# iam:GetRolePolicy
-# iam:GetRole
-# iam:ListAttachedRolePolicies
-# iam:ListRoleTags
-# logs:DescribeLogStreams
-# codebuild:StartBuild
-# codebuild:CreateProject
-# codebuild:DeleteProject
-# codebuild:BatchGetBuilds
-# cloudformation:DescribeStacks
-# s3:PutBucketTagging
-# s3:PutBucketWebsite
-# s3:CreateBucket
-# s3:DeleteBucket
-# s3:ListBuckets
-# s3:GetBucketPolicy
   CodeBuildRole:
     Type: AWS::IAM::Role
     Properties:
@@ -204,7 +184,13 @@ Resources:
                 - Ref: ArtifactBucket
                 - "/*"
           - Action:
-            - apigateway:*
+            - apigateway:ImportApi
+            - apigateway:CreateStage
+            - apigateway:DeleteStage
+            - apigateway:DeleteApi
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
             - codebuild:*
             - codedeploy:*
