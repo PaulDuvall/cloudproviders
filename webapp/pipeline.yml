@@ -229,7 +229,6 @@ Resources:
             Effect: Allow
             Resource: "*"
         PolicyName: CloudFormationRolePolicy
-      RoleName: !Sub ${AWS::StackName}-cfn-${AWS::Region}
     Type: AWS::IAM::Role
   CodePipelineRole:
     Type: AWS::IAM::Role
