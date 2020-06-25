@@ -108,6 +108,27 @@ Resources:
         Variables:
           CurrentVersion:
             Ref: getData.Version
+
+  postTrafficHook:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: postTrafficHook.handler
+      FunctionName:
+        'Fn::Sub': >-
+          CodeDeployHook_postTrafficHook_${AWS::StackName}
+      CodeUri: src/
+      DeploymentPreference:
+        Enabled: false
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+          - Effect: "Allow"
+            Action:
+              - "codedeploy:PutLifecycleEventHookExecutionStatus"
+            Resource:
+              !Sub 'arn:${AWS::Partition}:codedeploy:${AWS::Region}:${AWS::AccountId}:deploymentgroup:${ServerlessDeploymentApplication}/*'
+
+
 Outputs:
   GetDataApi:
     Description: API Gateway endpoint URL for Data Listing Function
