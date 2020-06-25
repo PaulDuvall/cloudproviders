@@ -1,6 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: 'Deploy Serverless application using API Gateway, Lambda, and DynamoDB'
+
+Globals:
+  Function:
+    Timeout: 5
+    Runtime: nodejs12.x
+    Tracing: Active
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
@@ -73,6 +79,9 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: preTrafficHook.handler
+      FunctionName:
+        'Fn::Sub': >-
+          CodeDeployHook_preTrafficHook_${AWS::StackName}
       CodeUri: src/
       Policies:
         - Version: '2012-10-17'

@@ -4,7 +4,7 @@
 
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
 
-MYNAME=${1:-pmd}
+MYNAME=${1:-iam-branch}
 PROJECTNAME=${2:-cloudproviders}
 TMPDIR=${3:-.tmp-gitrepo}   
 S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
