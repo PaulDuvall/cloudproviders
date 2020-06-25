@@ -4,14 +4,14 @@
 
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
 
-MYNAME=${1:-iam-branch}
+MYNAME=${1:-pmd}
 PROJECTNAME=${2:-cloudproviders}
 TMPDIR=${3:-.tmp-gitrepo}   
 S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
 SAMSTACK=${5:-$PROJECTNAME-$MYNAME-$AWS_REGION}
 CFNSTACK=${6:-$PROJECTNAME-$MYNAME}
 PIPELINEYAML=${7:-pipeline.yml}
-OTHER=${8:-cloudproviders-pmd}
+OTHER=${8:-iam-branch
 
 sudo rm -rf $TMPDIR
 mkdir $TMPDIR
