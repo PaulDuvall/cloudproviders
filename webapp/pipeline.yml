@@ -65,14 +65,68 @@ Resources:
         PolicyDocument:
           Statement:
           - Action:
-            - apigateway:*
-            - cloudformation:*
-            - cloudwatch:*
-            - codebuild:*
-            - dynamodb:*
-            - lambda:*
-            - logs:*
+            - logs:DescribeLogStreams
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - lambda:AddPermission
+            - lambda:CreateFunction
+            - lambda:DeleteAlias
+            - lambda:DeleteFunction
+            - lambda:GetFunction
+            - lambda:GetFunctionConfiguration
+            - lambda:GetPolicy
+            - lambda:ListFunctions
+            - lambda:ListVersionsByFunction
+            - lambda:PublishVersion
+            - lambda:RemovePermission
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - apigateway:DeleteApi
+            - apigateway:DeleteStage
+            - apigateway:CreateStage
+            - apigateway:ImportApi
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - dynamodb:CreateTable
+            - dynamodb:DeleteTable
+            - dynamodb:DescribeTable
+            - dynamodb:PutItem
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - s3:*
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - codebuild:BatchGetBuilds
+            - codebuild:CreateProject
+            - codebuild:CreateReport
+            - codebuild:CreateReportGroup
+            - codebuild:DeleteProject
+            - codebuild:ListProjects
+            - codebuild:StartBuild
+            - codebuild:UpdateReport
+            - codebuild:BatchPutTestCases
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - cloudformation:CreateChangeSet
+            - cloudformation:CreateStack
+            - cloudformation:DeleteStack
+            - cloudformation:DescribeChangeSet
+            - cloudformation:DescribeStackEvents
+            - cloudformation:DescribeStacks
+            - cloudformation:DescribeStackResource
+            - cloudformation:DescribeStackResources
+            - cloudformation:ExecuteChangeSet
+            - cloudformation:GetTemplate
+            - cloudformation:GetTemplateSummary
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
@@ -130,16 +184,53 @@ Resources:
                 - Ref: ArtifactBucket
                 - "/*"
           - Action:
-            - apigateway:*
+            - apigateway:ImportApi
+            - apigateway:CreateStage
+            - apigateway:Delete*
+            - apigateway:Put*
+            - apigateway:Post*
+            - apigateway:TagResource
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - codedeploy:DeleteApplication	
+            - codedeploy:CreateDeploymentGroup
+            - codedeploy:CreateApplication
+            - codedeploy:DeleteDeploymentGroup
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - sns:CreateTopic	
+            - sns:DeleteTopic
+            - sns:GetTopicAttributes
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - dynamodb:CreateTable	
+            - dynamodb:DeleteTable	
+            - dynamodb:DescribeTable	
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - codebuild:UpdateReport	
+            - codebuild:CreateReport
+            - codebuild:BatchPutTestCases
+            - codebuild:BatchGetBuilds
+            - codebuild:CreateReportGroup
+            - codebuild:StartBuild
+            - codebuild:DeleteBuild
+            Effect: Allow
+            Resource: "*"
+          - Action:
+            - logs:CreateLogStream	
+            - logs:CreateLogGroup
+            Effect: Allow
+            Resource: "*"
+          - Action:
             - cloudwatch:*
-            - codebuild:*
-            - codedeploy:*
-            - dynamodb:*
             - iam:*
             - lambda:*
-            - logs:*
             - s3:*
-            - sns:*
             - events:*
             Effect: Allow
             Resource: "*"
@@ -155,7 +246,6 @@ Resources:
             Effect: Allow
             Resource: "*"
         PolicyName: CloudFormationRolePolicy
-      RoleName: !Sub ${AWS::StackName}-cfn-${AWS::Region}
     Type: AWS::IAM::Role
   CodePipelineRole:
     Type: AWS::IAM::Role
@@ -193,9 +283,16 @@ Resources:
             Resource: "*"
             Effect: Allow
           - Action:
-            - codecommit:*
-            - codebuild:*
-            - cloudformation:*
+            - codecommit:GetBranch
+            - codecommit:GetCommit
+            - codecommit:GetUploadArchiveStatus
+            - codecommit:UploadArchive
+            - codebuild:BatchGetBuilds
+            - codebuild:StartBuild
+            - cloudformation:DescribeStacks
+            - cloudformation:CreateChangeSet
+            - cloudformation:DescribeChangeSet
+            - cloudformation:ExecuteChangeSet
             Resource: "*"
             Effect: Allow
           Version: '2012-10-17'
