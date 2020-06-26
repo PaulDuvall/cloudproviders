@@ -9,7 +9,7 @@ phases:
       - yum install -y jq
   pre_build:
     commands:
-    - >-
+      - >-
         ls -las
       - chmod +x *.sh
       - ./webapp/update-postman-env-file.sh ${SAM_STACK_NAME}
