@@ -420,7 +420,7 @@ Resources:
             Version: '1'
             Provider: GitHub
           OutputArtifacts:
-          - Name: SourceArtifacts
+          - Name: MyApp
           Configuration:
             Owner: !Ref GitHubUser
             Repo: !Ref GitHubRepo
