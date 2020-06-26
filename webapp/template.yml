@@ -10,7 +10,7 @@ Globals:
 Resources:
   mySNSTopic:
     Type: 'AWS::SNS::Topic'
-  getData:
+  GetDataFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: index-get.handler
@@ -21,7 +21,7 @@ Resources:
         Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
         Hooks:
           PreTraffic:
-            Ref: preTrafficHook
+            Ref: PreTrafficHookFunction
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
@@ -41,7 +41,7 @@ Resources:
           REGION:
             Ref: AWS::Region
       Events:
-        GetDataApi:
+        GetDataFunctionApi:
           Type: HttpApi
           Properties:
             ApiId:
@@ -75,13 +75,13 @@ Resources:
       CorsConfiguration:
         AllowOrigins:
           - '*'
-  preTrafficHook:
+  PreTrafficHookFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: preTrafficHook.handler
+      Handler: PreTrafficHookFunction.handler
       FunctionName:
         'Fn::Sub': >-
-          CodeDeployHook_preTrafficHook_${AWS::StackName}
+          CodeDeployHook_PreTrafficHookFunction_${AWS::StackName}
       CodeUri: src/
       Policies:
         - Version: '2012-10-17'
@@ -99,7 +99,7 @@ Resources:
                 - 'lambda:InvokeFunction'
               Resource:
                 'Fn::GetAtt':
-                  - getData
+                  - GetDataFunction
                   - Arn
       Runtime: nodejs12.x
       DeploymentPreference:
@@ -107,15 +107,15 @@ Resources:
       Environment:
         Variables:
           CurrentVersion:
-            Ref: getData.Version
+            Ref: GetDataFunction.Version
 
-  postTrafficHook:
+  PostTrafficHookFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: postTrafficHook.handler
+      Handler: PostTrafficHookFunction.handler
       FunctionName:
         'Fn::Sub': >-
-          CodeDeployHook_postTrafficHook_${AWS::StackName}
+          CodeDeployHook_PostTrafficHookFunction_${AWS::StackName}
       CodeUri: src/
       DeploymentPreference:
         Enabled: false
@@ -130,7 +130,7 @@ Resources:
 
 
 Outputs:
-  GetDataApi:
+  GetDataFunctionApi:
     Description: API Gateway endpoint URL for Data Listing Function
     Value:
       'Fn::Sub': 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/clouds'
@@ -138,7 +138,7 @@ Outputs:
     Description: URL for Lambda Get Function
     Value:
       'Fn::Sub': >-
-        https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${getData}/aliases/live?tab=configuration
+        https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${GetDataFunction}/aliases/live?tab=configuration
   CodeDeployUrl:
     Description: URL for CodeDeploy Deployments
     Value:
