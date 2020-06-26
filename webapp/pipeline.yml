@@ -272,11 +272,14 @@ Resources:
             - arn:aws:s3:::codepipeline*
             Effect: Allow
           - Action:
-            - s3:GetObject
-            - s3:GetObjectVersion
-            - s3:GetBucketVersioning
-            - s3:PutObject
             - iam:PassRole
+            Resource: "*"
+            Effect: Allow
+          - Action:
+            - cloudformation:DescribeStacks
+            - cloudformation:CreateChangeSet
+            - cloudformation:DescribeChangeSet
+            - cloudformation:ExecuteChangeSet
             Resource: "*"
             Effect: Allow
           - Action:
@@ -284,12 +287,11 @@ Resources:
             - codecommit:GetCommit
             - codecommit:GetUploadArchiveStatus
             - codecommit:UploadArchive
+            Resource: "*"
+            Effect: Allow
+          - Action:
             - codebuild:BatchGetBuilds
             - codebuild:StartBuild
-            - cloudformation:DescribeStacks
-            - cloudformation:CreateChangeSet
-            - cloudformation:DescribeChangeSet
-            - cloudformation:ExecuteChangeSet
             Resource: "*"
             Effect: Allow
           Version: '2012-10-17'
