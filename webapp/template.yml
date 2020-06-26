@@ -21,9 +21,9 @@ Resources:
         Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
         Hooks:
           PreTraffic:
-            Ref: PreTrafficHookFunction
+            Ref: PreTraffic
           PostTraffic:
-            Ref: PostTrafficHookFunction
+            Ref: PostTraffic
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
@@ -77,13 +77,13 @@ Resources:
       CorsConfiguration:
         AllowOrigins:
           - '*'
-  PreTrafficHookFunction:
+  PreTraffic:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: PreTrafficHookFunction.handler
+      Handler: PreTraffic.handler
       FunctionName:
         'Fn::Sub': >-
-          CodeDeployHook_PreTrafficHookFunction_${AWS::StackName}
+          CodeDeployHook_PreTraffic_${AWS::StackName}
       CodeUri: src/
       Policies:
         - Version: '2012-10-17'
@@ -111,13 +111,13 @@ Resources:
           CurrentVersion:
             Ref: GetDataFunction.Version
 
-  PostTrafficHookFunction:
+  PostTraffic:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: PostTrafficHookFunction.handler
+      Handler: PostTraffic.handler
       FunctionName:
         'Fn::Sub': >-
-          CodeDeployHook_PostTrafficHookFunction_${AWS::StackName}
+          CodeDeployHook_PostTraffic_${AWS::StackName}
       CodeUri: src/
       DeploymentPreference:
         Enabled: false
