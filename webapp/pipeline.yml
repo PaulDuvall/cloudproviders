@@ -254,7 +254,9 @@ Resources:
             Resource: "*"
             Effect: Allow
           - Action:
-            - s3:PutObject
+            - s3:GetObject
+            - s3:GetObjectVersion
+            - s3:GetBucketVersioning
             Resource:
             - arn:aws:s3:::codepipeline*
             Effect: Allow
