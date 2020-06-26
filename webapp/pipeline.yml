@@ -290,7 +290,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-get-function.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
         Type: GITHUB
       TimeoutInMinutes: 10
       Tags:
@@ -317,7 +317,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-insert-data.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
         Type: GITHUB
       TimeoutInMinutes: 10
   CodeBuildApiTest:
@@ -343,7 +343,7 @@ Resources:
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
         BuildSpec: buildspec-api-tests.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
         Type: GITHUB
       TimeoutInMinutes: 10
   CodeBuildDiagrams:
@@ -374,7 +374,7 @@ Resources:
               Fn::Sub: ${AWS::StackName}-${AWS::Region}
       Source:
         BuildSpec: buildspec-diagrams.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
         Type: GITHUB
       TimeoutInMinutes: 10
       Tags:
