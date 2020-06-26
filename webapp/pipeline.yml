@@ -289,8 +289,8 @@ Resources:
         ComputeType: BUILD_GENERAL1_SMALL
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
-        BuildSpec: buildspec-lambda.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
+        BuildSpec: webapp/buildspec-lambda.yml
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
         Type: GITHUB
       TimeoutInMinutes: 10
       Tags:
@@ -373,8 +373,8 @@ Resources:
             Value:
               Fn::Sub: ${AWS::StackName}-${AWS::Region}
       Source:
-        BuildSpec: buildspec-diagrams.yml
-        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/webapp
+        BuildSpec: webapp/buildspec-diagrams.yml
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}/
         Type: GITHUB
       TimeoutInMinutes: 10
       Tags:
