@@ -11,10 +11,13 @@ phases:
     commands:
       - >-
         ls -las
+      - cd webapp
       - chmod +x *.sh
-      - ./webapp/update-postman-env-file.sh ${SAM_STACK_NAME}
+      - ./update-postman-env-file.sh ${SAM_STACK_NAME}
   build:
     commands:
+      - >-
+        ls -las
       - >-
         newman run webapp/collection.json --environment webapp/postman_environment.json -r
         junit
