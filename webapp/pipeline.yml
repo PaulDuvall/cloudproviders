@@ -248,17 +248,8 @@ Resources:
         PolicyDocument:
           Statement:
           - Action:
-            - s3:GetObject
-            - s3:GetObjectVersion
-            - s3:GetBucketVersioning
+            - s3:*
             Resource: "*"
-            Effect: Allow
-          - Action:
-            - s3:GetObject
-            - s3:GetObjectVersion
-            - s3:GetBucketVersioning
-            Resource:
-            - arn:aws:s3:::codepipeline*
             Effect: Allow
           - Action:
             - iam:PassRole
@@ -269,13 +260,6 @@ Resources:
             - cloudformation:CreateChangeSet
             - cloudformation:DescribeChangeSet
             - cloudformation:ExecuteChangeSet
-            Resource: "*"
-            Effect: Allow
-          - Action:
-            - codecommit:GetBranch
-            - codecommit:GetCommit
-            - codecommit:GetUploadArchiveStatus
-            - codecommit:UploadArchive
             Resource: "*"
             Effect: Allow
           - Action:
