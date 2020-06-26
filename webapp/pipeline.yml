@@ -18,6 +18,9 @@ Parameters:
     Type: String
     Description: GitHub Branch
     Default: "master"
+  S3Bucket:
+    Type: String
+    Description: S3Bucket
   GitHubToken:
     NoEcho: true
     Type: String
@@ -333,7 +336,7 @@ Resources:
       Environment:
         EnvironmentVariables:
         - Name: S3_BUCKET
-          Value: !Ref PipelineBucket
+          Value: !Ref S3Bucket
         - Name: SAM_STACK_NAME
           Type: PLAINTEXT
           Value:
