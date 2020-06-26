@@ -138,24 +138,6 @@ Resources:
       - Endpoint:
           Ref: EmailAddress
         Protocol: email
-  CodeCommitRepo:
-    Type: AWS::CodeCommit::Repository
-    Properties:
-      RepositoryName:
-        Ref: PipelineBucket
-      RepositoryDescription: CodeCommit Repository for CloudProviders
-      Code:
-        S3:
-          Bucket: !Ref CodeCommitS3Bucket
-          Key: !Ref CodeCommitS3Key
-      Triggers:
-      - Name: MasterTrigger
-        CustomData:
-          Ref: AWS::StackName
-        DestinationArn:
-          Ref: MySNSTopic
-        Events:
-        - all
   CloudFormationTrustRole:
     Properties:
       AssumeRolePolicyDocument:
