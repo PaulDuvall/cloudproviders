@@ -2,6 +2,10 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: CodePipeline for Serverless CloudProvider App
 Parameters:
+  EmailAddress:
+    Description: Email Address for sending SNS notifications for CodeCommit
+    Type: String
+    Default: fake-email@fake-fake-fake-email.com
   GitHubUser:
     Type: String
     Description: GitHub User
