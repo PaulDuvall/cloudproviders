@@ -22,8 +22,8 @@ Resources:
         Hooks:
           PreTraffic:
             Ref: PreTraffic
-          PostTraffic:
-            Ref: PostTraffic
+          # PostTraffic:
+          #   Ref: PostTraffic
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
