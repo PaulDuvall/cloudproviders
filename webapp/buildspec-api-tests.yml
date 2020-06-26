@@ -18,8 +18,9 @@ phases:
     commands:
       - >-
         ls -las
+      - cd webapp
       - >-
-        newman run webapp/collection.json --environment webapp/postman_environment.json -r
+        newman run collection.json --environment postman_environment.json -r
         junit
 reports:
   JUnitReports:
