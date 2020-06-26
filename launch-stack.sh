@@ -53,4 +53,4 @@ cd zipfiles
 
 aws s3 sync . s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
 
-aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=CodeCommitS3Bucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account') ParameterKey=CodeCommitS3Key,ParameterValue=$S3BUCKET.zip
+aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML
