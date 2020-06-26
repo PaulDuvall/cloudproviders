@@ -510,11 +510,14 @@ Outputs:
   PipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
-  ServerlessWebAppUrl:
+  DiagramWebAppUrl:
     Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_apps.png
     Description: Diagram for Serverless Web Apps
-  ServerlessWebWorkflowUrl:
+  DiagramWorkflowUrl:
     Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_app_workflow.png
+    Description: Diagram for Serverless Web Apps Simple Workflow
+  DiagramGradualDeploymentsUrl:
+    Value: !Sub https://${SiteBucket}.s3.amazonaws.com/gradual_deployments.png
     Description: Diagram for Serverless Web Apps Simple Workflow
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
