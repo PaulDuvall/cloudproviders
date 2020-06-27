@@ -18,7 +18,7 @@ Parameters:
     Type: String
     Description: GitHub Branch
     Default: "master"
-  S3Bucket:
+  PipelineBucket:
     Type: String
     Description: S3Bucket
   GitHubToken:
@@ -390,10 +390,6 @@ Resources:
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
-  PipelineBucket:
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
   Pipeline:
     Type: AWS::CodePipeline::Pipeline
     Properties:
