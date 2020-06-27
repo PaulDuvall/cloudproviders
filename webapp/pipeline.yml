@@ -336,7 +336,7 @@ Resources:
       Environment:
         EnvironmentVariables:
         - Name: S3_BUCKET
-          Value: !Ref S3Bucket
+          Value: !Ref PipelineBucket
         - Name: SAM_STACK_NAME
           Type: PLAINTEXT
           Value:
