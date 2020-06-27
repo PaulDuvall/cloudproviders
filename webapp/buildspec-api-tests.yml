@@ -21,8 +21,11 @@ phases:
       # - >-
       #   newman run collection.json --environment postman_environment.json -r
       #   junit
-reports:
-  JUnitReports:
-    files:
-      - '**/*'
-    base-directory: newman
+# reports:
+#   JUnitReports:
+#     files:
+#       - '**/*'
+#     base-directory: newman
+artifacts:
+  files:
+    - '**/*'
