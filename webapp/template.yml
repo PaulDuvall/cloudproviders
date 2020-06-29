@@ -110,6 +110,7 @@ Resources:
         Variables:
           CurrentVersion:
             Ref: GetDataFunction.Version
+          FUNCTION_VERSION: !Ref GetDataFunction.Version
 
   PostTraffic:
     Type: AWS::Serverless::Function
