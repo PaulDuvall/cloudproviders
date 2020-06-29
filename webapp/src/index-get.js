@@ -16,7 +16,9 @@ exports.handler = function(event, context, callback){
         if(err){
             callback(err, null);
         }else{
-            callback({lambda: "one", preTest: true, postTest: true, code: 1},data);
+            callback(null,data);
+            console.log('about to call return');
+            return {lambda: "one", preTest: true, postTest: true, code: 1};
         }
     });
 }
