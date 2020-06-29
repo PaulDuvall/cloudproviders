@@ -24,7 +24,7 @@ exports.handler = async (event) => {
 
 
   let invokeParams = {
-    FunctionName: process.env.FUNCTION_VERSION
+    FunctionName: process.env.CurrentVersion
   }
 
   try{
