@@ -4,6 +4,7 @@ const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 
 exports.handler = function(event, context, callback){
+    let StatusCode=false;
     console.log('processing event: %j', event);
 
     let scanningParameters = {
@@ -16,9 +17,9 @@ exports.handler = function(event, context, callback){
         if(err){
             callback(err, null);
         }else{
+            StatusCode=(true);
             callback(null,data);
-            console.log('about to call return');
-            return {lambda: "one", preTest: true, postTest: true, code: 1};
+            // callback(StatusCode);
         }
     });
 }
