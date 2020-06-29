@@ -19,7 +19,6 @@ exports.handler = function(event, context, callback){
         }else{
             StatusCode=(true);
             callback(null,data);
-            // callback(StatusCode);
         }
     });
 }
