@@ -99,10 +99,9 @@ Resources:
             - Effect: Allow
               Action:
                 - 'lambda:InvokeFunction'
-              Resource:
-                'Fn::GetAtt':
-                  - GetDataFunction
-                  - Arn
+              Resource: !Sub
+                - ${FunctionArn}:*
+                - FunctionArn: !GetAtt GetDataFunction.Arn
       Runtime: nodejs12.x
       DeploymentPreference:
         Enabled: false
