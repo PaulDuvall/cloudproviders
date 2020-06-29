@@ -16,7 +16,9 @@ OTHER=${8:-cloudproviders-pmd}
 sudo rm -rf $TMPDIR
 mkdir $TMPDIR
 cd $TMPDIR
-git clone https://github.com/PaulDuvall/cloudproviders.git
+# git clone https://github.com/PaulDuvall/cloudproviders.git
+
+git clone -b canary https://github.com/PaulDuvall/cloudproviders.git cloudproviders
 
 
 aws s3api list-buckets --query 'Buckets[?starts_with(Name, `'$OTHER'`) == `true`].[Name]' --output text | xargs -I {} aws s3 rb s3://{} --force
@@ -53,4 +55,4 @@ cd zipfiles
 
 aws s3 sync . s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
 
-aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=PipelineBucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
+aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=PipelineBucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account') ParameterKey=GitHubBranch,ParameterValue=$MYNAME
