@@ -51,4 +51,6 @@ exports.lambdaHandler = async (event) => {
   } catch (err) {
     console.log("putLifecycleEventHookExecutionStatus ERROR: " + err);
     throw new Error('Validation test failed')
+  }
+}
   
