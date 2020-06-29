@@ -19,4 +19,5 @@ exports.handler = function(event, context, callback){
             callback(null,data);
         }
     });
+    return {lambda: "one", preTest: true, postTest: true, code: 1};
 }
