@@ -8,8 +8,8 @@ const codedeploy = new aws.CodeDeploy();
 const lambda = new aws.Lambda();
 
 exports.handler = async (event) => {
-  let status = 'Succeeded'; 
-  // 'Failed';
+  // let status = 'Succeeded'; 
+  let status = 'Failed';
 
   console.log("Entering PreTraffic Hook!");
   console.log(JSON.stringify(event));
