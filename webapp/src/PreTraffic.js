@@ -31,7 +31,7 @@ exports.handler = async (event) => {
     let returnEvent = await lambda.invoke(invokeParams).promise()
     console.log(returnEvent);
     console.log(JSON.parse(returnEvent.Payload))
-    if(JSON.parse(returnEvent.Payload).preTest) status = 'Succeeded';
+    if(JSON.parse(returnEvent.Payload).preTest);
   } catch (err) {
     console.log('error invoking Lambda');
     console.log(err)
