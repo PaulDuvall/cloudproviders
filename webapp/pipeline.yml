@@ -6,6 +6,9 @@ Parameters:
     Description: Email Address for sending SNS notifications for CodeCommit
     Type: String
     Default: fake-email@fake-fake-fake-email.com
+  PipelineBucket:
+    Type: String
+    Description: S3Bucket
   GitHubUser:
     Type: String
     Description: GitHub User
@@ -18,9 +21,6 @@ Parameters:
     Type: String
     Description: GitHub Branch
     Default: "master"
-  PipelineBucket:
-    Type: String
-    Description: S3Bucket
   GitHubToken:
     NoEcho: true
     Type: String
