@@ -22,8 +22,8 @@ Resources:
         Hooks:
           PreTraffic:
             Ref: PreTraffic
-          # PostTraffic:
-          #   Ref: PostTraffic
+          PostTraffic:
+            Ref: PostTraffic
         TriggerConfigurations:
           - TriggerEvents:
               - DeploymentSuccess
@@ -80,7 +80,7 @@ Resources:
   PreTraffic:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: PreTraffic.handler
+      Handler: PreTraffic.lambdaHandler
       FunctionName:
         'Fn::Sub': >-
           CodeDeployHook_PreTraffic_${AWS::StackName}
@@ -99,10 +99,9 @@ Resources:
             - Effect: Allow
               Action:
                 - 'lambda:InvokeFunction'
-              Resource:
-                'Fn::GetAtt':
-                  - GetDataFunction
-                  - Arn
+              Resource: !Sub
+                - ${FunctionArn}:*
+                - FunctionArn: !GetAtt GetDataFunction.Arn
       Runtime: nodejs12.x
       DeploymentPreference:
         Enabled: false
