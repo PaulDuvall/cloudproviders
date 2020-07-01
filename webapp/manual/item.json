@@ -3,12 +3,12 @@
     "S": "AWS"
   },
   "ServiceName": {
-    "S": "EC2"
+    "S": "SageMaker"
   },
   "id": {
-    "N": "2000"
+    "N": "2001"
   },
   "URL": {
-    "S": "https://aws.amazon.com/ec2/"
+    "S": "https://aws.amazon.com/sagemaker/"
   }
 }
