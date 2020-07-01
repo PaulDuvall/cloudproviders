@@ -37,12 +37,6 @@ exports.lambdaHandler = (event, context, callback) => {
             var result = JSON.parse(data.Payload);
             console.log("Result: " + JSON.stringify(result));
 
-            // Check the response for valid results
-            // The response will be a JSON payload with statusCode and body properties. ie:
-            // {
-            //		"statusCode": 200,
-            //		"body": 51
-            // }
             if (result.statusCode != 500) {
                 lambdaResult = "Succeeded";
                 console.log("Validation testing succeeded!");
