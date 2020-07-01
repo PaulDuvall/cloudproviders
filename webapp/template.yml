@@ -18,7 +18,8 @@ Resources:
       Runtime: nodejs12.x
       AutoPublishAlias: live
       DeploymentPreference:
-        Type: AllAtOnce #CodeDeployDefault.LambdaCanary10Percent5Minutes
+        # Type: AllAtOnce #CodeDeployDefault.LambdaCanary10Percent5Minutes
+        Type: CodeDeployDefault.LambdaCanary10Percent5Minutes
         Hooks:
           PreTraffic:
             Ref: PreTraffic
