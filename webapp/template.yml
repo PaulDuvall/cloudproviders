@@ -80,7 +80,7 @@ Resources:
   PreTraffic:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: PreTraffic.handler
+      Handler: PreTraffic.lambdaHandler
       FunctionName:
         'Fn::Sub': >-
           CodeDeployHook_PreTraffic_${AWS::StackName}
