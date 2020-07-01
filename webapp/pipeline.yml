@@ -515,8 +515,8 @@ Outputs:
   DiagramWorkflowUrl:
     Value: !Sub https://${SiteBucket}.s3.amazonaws.com/serverless_web_app_workflow.png
     Description: Diagram for Serverless Web Apps Simple Workflow
-  DiagramGradualDeploymentsUrl:
-    Value: !Sub https://${SiteBucket}.s3.amazonaws.com/gradual_deployments.png
+  DiagramCanaryDeploymentsUrl:
+    Value: !Sub https://${SiteBucket}.s3.amazonaws.com/canary-deployments.png
     Description: Diagram for Serverless Web Apps Simple Workflow
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
