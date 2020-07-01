@@ -15,11 +15,20 @@ exports.handler = function(event, context, callback){
 
     //In dynamoDB scan looks through your entire table and fetches all data
     docClient.scan(scanningParameters, function(err,data){
-        if(err){
-            callback(err, null);
-        }else{
-            StatusCode=(true);
-            callback(null,data);
+        if (err) {
+            console.log(err, err.stack);
+            callback(null, {
+                statusCode: 500,
+                body: "Failure!"
+
+            });
+        }
+        else{
+            var counter = 0;
+            callback(null, {
+                statusCode: 200,
+                body: "Success!"
+            });
         }
     });
 }

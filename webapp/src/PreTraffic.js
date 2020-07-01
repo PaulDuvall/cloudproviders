@@ -1,17 +1,12 @@
-// @ts-check
-'use strict';
-
-// From https://github.com/singledigit/sessions-with-sam/blob/master/safe-deploy/src/hooks/basepre.js
-
 const aws = require('aws-sdk');
 const codedeploy = new aws.CodeDeploy();
 const lambda = new aws.Lambda();
 
-exports.handler = async (event) => {
-  // let status = 'Succeeded'; 
+exports.lambdaHandler = (event, context, callback) => {
+
   let status = 'Failed';
 
-  console.log("Entering PreTraffic Hook!");
+  console.log("Entering PreTraffic.js Hook!");
   console.log(JSON.stringify(event));
 
   //Read the DeploymentId from the event payload.
@@ -23,40 +18,60 @@ exports.handler = async (event) => {
   console.log("lifecycleEventHookExecutionId=" + lifecycleEventHookExecutionId);
 
 
-  let invokeParams = {
-    FunctionName: process.env.CurrentVersion
-  }
+    var functionToTest = process.env.CurrentVersion;
+    console.log("Testing new function version: " + functionToTest);
 
-  try{
-    let returnEvent = await lambda.invoke(invokeParams).promise()
-    console.log("returnEvent=" + returnEvent);
-    console.log("returnEvent.StatusCode=" + JSON.parse(returnEvent.StatusCode));
-    console.log(JSON.parse(returnEvent.Payload))
-    let myStatusCode = JSON.parse(returnEvent.StatusCode);
-    console.log("myStatusCode=" + myStatusCode);
-    if(myStatusCode == '200') {
-      status = 'Succeeded';
-    }
-  } catch (err) {
-    console.log('error invoking Lambda');
-    console.log(err)
-  }
+    // Perform validation of the newly deployed Lambda version
+    var lambdaParams = {
+        FunctionName: functionToTest,
+        InvocationType: "RequestResponse"
+    };
 
-  // Prepare the validation test results with the deploymentId and
-  // the lifecycleEventHookExecutionId for AWS CodeDeploy.
-  let params = {
-    deploymentId: deploymentId,
-    lifecycleEventHookExecutionId: lifecycleEventHookExecutionId,
-    status: status // status can be 'Succeeded' or 'Failed'
-  };
+    var lambdaResult = "Failed";
+    lambda.invoke(lambdaParams, function (err, data) {
+        if (err) {	// an error occurred
+            console.log(err, err.stack);
+            lambdaResult = "Failed";
+        }
+        else {	// successful response
+            var result = JSON.parse(data.Payload);
+            console.log("Result: " + JSON.stringify(result));
 
-  try {
-    await codedeploy.putLifecycleEventHookExecutionStatus(params).promise();
-    console.log("putLifecycleEventHookExecutionStatus done. executionStatus=[" + params.status + "]");
-    return 'Validation test succeeded'
-  } catch (err) {
-    console.log("putLifecycleEventHookExecutionStatus ERROR: " + err);
-    throw new Error('Validation test failed')
-  }
+            // Check the response for valid results
+            // The response will be a JSON payload with statusCode and body properties. ie:
+            // {
+            //		"statusCode": 200,
+            //		"body": 51
+            // }
+            if (result.statusCode == 200) {
+                lambdaResult = "Succeeded";
+                console.log("Validation testing succeeded!");
+            }
+            else {
+                lambdaResult = "Failed";
+                console.log("Validation testing failed!");
+            }
+
+            // Complete the PreTraffic Hook by sending CodeDeploy the validation status
+            var params = {
+                deploymentId: deploymentId,
+                lifecycleEventHookExecutionId: lifecycleEventHookExecutionId,
+                status: lambdaResult // status can be 'Succeeded' or 'Failed'
+            };
+
+            // Pass AWS CodeDeploy the prepared validation test results.
+            codedeploy.putLifecycleEventHookExecutionStatus(params, function (err, data) {
+                if (err) {
+                    // Validation failed.
+                    console.log('CodeDeploy Status update failed');
+                    console.log(err, err.stack);
+                    callback("CodeDeploy Status update failed");
+                } else {
+                    // Validation succeeded.
+                    console.log('Codedeploy status updated successfully');
+                    callback(null, 'Codedeploy status updated successfully');
+                }
+            });
+        }
+    });
 }
-  
