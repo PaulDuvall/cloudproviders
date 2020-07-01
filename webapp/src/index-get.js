@@ -9,7 +9,7 @@ exports.handler = function(event, context, callback){
 
     let scanningParameters = {
         // TableName: process.env.TABLE_NAME,
-        TableName: "makeitfail",
+        TableName: "makeitfails",
         Limit: 100 //maximum result of 100 items
     };
 
