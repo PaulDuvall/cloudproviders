@@ -9,6 +9,7 @@ phases:
     commands:
       - npm install
       - npm install aws-cli-js
+      # - aws dynamodb batch-write-item --request-items file://webapp/manual/put-items.json
       - >-
         aws dynamodb put-item --table-name $TABLE_NAME --item file://webapp/manual/item.json
 artifacts:

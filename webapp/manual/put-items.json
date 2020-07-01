@@ -1,5 +1,5 @@
 {
-    "CloudProviders": [
+    "cloudproviders-pmd-us-east-1": [
         {
             "PutRequest": {
                 "Item": {
