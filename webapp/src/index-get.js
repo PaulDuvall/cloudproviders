@@ -19,15 +19,12 @@ exports.handler = function(event, context, callback){
             console.log(err, err.stack);
             callback(null, {
                 statusCode: 500,
-                body: "Failure!"
-
             });
         }
         else{
             var counter = 0;
             callback(null, {
                 statusCode: 200,
-                body: "Success!"
             });
         }
     });
