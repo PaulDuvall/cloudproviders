@@ -25,6 +25,7 @@ exports.handler = function(event, context, callback){
             var counter = 0;
             callback(null, {
                 statusCode: 200,
+                body: data
             });
         }
     });
