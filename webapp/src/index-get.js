@@ -8,8 +8,8 @@ exports.handler = function(event, context, callback){
     console.log('processing event: %j', event);
 
     let scanningParameters = {
-        // TableName: process.env.TABLE_NAME,
-        TableName: "makeitfail14",
+        TableName: process.env.TABLE_NAME,
+        // TableName: "makeitfail14",
         Limit: 100 //maximum result of 100 items
     };
 
