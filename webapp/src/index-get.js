@@ -22,10 +22,7 @@ exports.handler = function(event, context, callback){
             });
         }
         else{
-            var counter = 0;
-            callback(null, {
-                statusCode: 200, data
-            });
+            callback(null, data);
         }
     });
 }
