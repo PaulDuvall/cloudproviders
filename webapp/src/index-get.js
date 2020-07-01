@@ -4,12 +4,10 @@ const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 
 exports.handler = function(event, context, callback){
-    let StatusCode=false;
     console.log('processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
-        // TableName: "makeitfail",
         Limit: 100 //maximum result of 100 items
     };
 
