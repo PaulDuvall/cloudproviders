@@ -5,7 +5,7 @@ const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 
 exports.handler = function(event, context, callback){
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('processing event: %j', event);
+    console.log('Version 3 processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
