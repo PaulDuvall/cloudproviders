@@ -5,7 +5,7 @@
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
 
 MYNAME=${1:-pmd}
-PROJECTNAME=${2:-lambda}
+PROJECTNAME=${2:-cloudproviders}
 TMPDIR=${3:-.tmp-gitrepo}   
 S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
 SAMSTACK=${5:-$PROJECTNAME-$MYNAME-$AWS_REGION}
