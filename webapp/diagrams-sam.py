@@ -17,9 +17,7 @@ from diagrams.aws.general import General
 from diagrams.onprem.client import Client
 
 graph_attr = {
-    "fontsize": "45",
-    "bgcolor": "transparent",
-    "fillcolor": "red"
+    "fontsize": "45"
 }
 
 cluster_attr = {
