@@ -4,7 +4,7 @@ const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 
 exports.handler = function(event, context, callback){
-    console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
+    console.log("Running function index-get.js: " + context.functionName + ":" + context.functionVersion);
     console.log('processing event: %j', event);
 
     let scanningParameters = {
