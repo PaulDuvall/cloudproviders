@@ -9,7 +9,7 @@ const htmlResponse = require('./html-response');
 
 exports.lambdaHandler = async (event, context, callback) => {
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('Version 1526 lambdaHandler processing event: %j', event);
+    console.log('Version 1557 lambdaHandler processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
@@ -29,9 +29,9 @@ exports.lambdaHandler = async (event, context, callback) => {
       </html>
     `;
     
-    console.log('Version 1543 event.httpmethod: ', event.httpmethod);
+    console.log('Version 1557 event.httpmethod: ', event.httpMethod);
 
-    if (event.httpmethod === 'GET') {
+    if (event.httpMethod === 'GET') {
         console.log("GET method called in index-get.js!!!!!!!!!");
         return htmlResponse(thanksHtml);
     }    
