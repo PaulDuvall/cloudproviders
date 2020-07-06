@@ -6,7 +6,7 @@ const htmlResponse = require('./html-response');
 
 exports.handler = function(event, context, callback){
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('Version 3 processing event: %j', event);
+    console.log('Version 1451 processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
@@ -27,10 +27,10 @@ exports.handler = function(event, context, callback){
     `;
 
     if (event.httpMethod === 'GET') {
-      return htmlResponse(thanksHtml);
+        console.log("GET method called in index-get.js!!!!!!!!!");
+        return htmlResponse(thanksHtml);
     }    
     
-
     //In dynamoDB scan looks through your entire table and fetches all data
     docClient.scan(scanningParameters, function(err,data){
         if (err) {
