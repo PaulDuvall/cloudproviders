@@ -13,7 +13,7 @@ Resources:
   GetDataFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: index-get.handler
+      Handler: index-get.lambdaHandler
       CodeUri: src/
       Runtime: nodejs12.x
       AutoPublishAlias: live

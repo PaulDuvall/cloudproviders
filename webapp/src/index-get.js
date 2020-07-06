@@ -4,9 +4,12 @@ const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient({region: process.env.REGION});
 const htmlResponse = require('./html-response');
 
-exports.handler = function(event, context, callback){
+// exports.lambdaHandler = async (event, context) => {
+
+
+exports.lambdaHandler = async (event, context, callback) => {
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('Version 1521 processing event: %j', event);
+    console.log('Version 1526 lambdaHandler processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
