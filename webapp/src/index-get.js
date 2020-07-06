@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback){
       </html>
     `;
 
-    if (event.httpMethod === 'GET') {
+    if (event.requestContext.http.method === 'GET') {
         console.log("GET method called in index-get.js!!!!!!!!!");
         return htmlResponse(thanksHtml);
     }    

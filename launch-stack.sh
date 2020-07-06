@@ -1,6 +1,8 @@
 #!/bin/bash
 # sudo chmod +x *.sh
 # ./launch-stack.sh
+# ./launch-stack.sh pmd cloudproviders html
+
 
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/')
 
