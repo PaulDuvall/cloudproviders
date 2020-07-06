@@ -6,7 +6,7 @@ const htmlResponse = require('./html-response');
 
 exports.handler = function(event, context, callback){
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('Version 1518 processing event: %j', event);
+    console.log('Version 1521 processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback){
       </html>
     `;
 
-    if (event.method === 'GET') {
+    if (event.httpmethod === 'GET') {
         console.log("GET method called in index-get.js!!!!!!!!!");
         return htmlResponse(thanksHtml);
     }    
