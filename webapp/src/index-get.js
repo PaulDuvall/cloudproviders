@@ -28,6 +28,8 @@ exports.lambdaHandler = async (event, context, callback) => {
       </body>
       </html>
     `;
+    
+    console.log('Version 1543 event.httpmethod: ', event.httpmethod);
 
     if (event.httpmethod === 'GET') {
         console.log("GET method called in index-get.js!!!!!!!!!");
