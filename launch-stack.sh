@@ -6,12 +6,13 @@ AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availabil
 
 MYNAME=${1:-pmd}
 PROJECTNAME=${2:-cloudproviders}
-TMPDIR=${3:-.tmp-gitrepo}   
-S3BUCKET=${4:-$PROJECTNAME-$MYNAME}
-SAMSTACK=${5:-$PROJECTNAME-$MYNAME-$AWS_REGION}
-CFNSTACK=${6:-$PROJECTNAME-$MYNAME}
-PIPELINEYAML=${7:-pipeline.yml}
-OTHER=${8:-iam-branch}
+BRANCH=${3:-master}
+TMPDIR=${4:-.tmp-gitrepo}   
+S3BUCKET=${5:-$PROJECTNAME-$MYNAME}
+SAMSTACK=${6:-$PROJECTNAME-$MYNAME-$AWS_REGION}
+CFNSTACK=${7:-$PROJECTNAME-$MYNAME}
+PIPELINEYAML=${8:-pipeline.yml}
+OTHER=${9:-iam-branch}
 
 sudo rm -rf $TMPDIR
 mkdir $TMPDIR
@@ -53,4 +54,7 @@ cd zipfiles
 
 aws s3 sync . s3://$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
 
-aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=PipelineBucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account')
+aws cloudformation create-stack --stack-name $CFNSTACK --capabilities CAPABILITY_NAMED_IAM --disable-rollback --template-body file://$PIPELINEYAML --parameters ParameterKey=PipelineBucket,ParameterValue=$S3BUCKET-$(aws sts get-caller-identity --output text --query 'Account') ParameterKey=GitHubBranch,ParameterValue=$BRANCH 
+
+
+
