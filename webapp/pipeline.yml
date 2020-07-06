@@ -517,7 +517,7 @@ Outputs:
     Description: Diagram for Serverless Web Apps Simple Workflow
   DiagramCanaryDeploymentsUrl:
     Value: !Sub https://${SiteBucket}.s3.amazonaws.com/canary-deployments.png
-    Description: Diagram for Serverless Web Apps Simple Workflow
+    Description: Diagram for Canary Deployment
   LambdaTrustRole:
     Description: IAM role for AWS Lambda used for passRole to Lambda functions.
     Export:
@@ -526,7 +526,3 @@ Outputs:
       Fn::GetAtt:
       - MyLambdaTrustRole
       - Arn
-  CodeCommitUrl:
-    Description: URL for CodeCommit Repo
-    Value:
-      'Fn::Sub': 'https://console.aws.amazon.com/codesuite/codecommit/repositories/${PipelineBucket}/browse?region=${AWS::Region}'
