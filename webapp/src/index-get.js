@@ -6,7 +6,7 @@ const htmlResponse = require('./html-response');
 
 exports.handler = function(event, context, callback){
     console.log("Running index-get.js: " + context.functionName + ":" + context.functionVersion);
-    console.log('Version 3 processing event: %j', event);
+    console.log('V3 PMD processing event: %j', event);
 
     let scanningParameters = {
         TableName: process.env.TABLE_NAME,
